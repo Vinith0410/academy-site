@@ -1,0 +1,173 @@
+:root {
+  --orange: #f2994a;
+  --green: #27ae60;
+  --bg: #f8f9fa;
+  --shadow: 0 10px 28px rgba(18, 20, 22, 0.08);
+}
+
+/* Popup Background */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Popup Box */
+.popup-content {
+  background: #fff;
+  width: 620px;
+  padding: 40px 45px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: popupIn 0.5s ease;
+  position: relative;
+  transform-origin: center;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 26px;
+  color: var(--green);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.close-btn:hover {
+  transform: scale(1.2) rotate(90deg);
+  color: #1f8e4e;
+}
+
+/* Title */
+.popup-content h2 {
+  color: var(--green);
+  font-size: 26px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+/* Subtitle */
+.popup-content p {
+  color: #444;
+  font-size: 15px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+/* Inputs */
+.popup-content input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+}
+
+/* Placeholder text */
+.popup-content input::placeholder {
+  color: #999;
+  transition: color 0.5s ease;
+}
+
+/* Focus effect */
+.popup-content input:focus {
+  border-color: var(--green);
+  color: #222;
+}
+
+.popup-content input:focus::placeholder {
+  color: var(--green);
+}
+
+/* Submit Button */
+.popup-content button {
+   width: 100%;
+   background: linear-gradient(90deg, var(--green), #21b56a);
+   color: #fff;
+   padding: 10px 0;
+   border-radius: 10px;
+   font-weight: 700;
+   border: none;
+   cursor: pointer;
+   transition: background 0.8s ease, transform 0.3s ease; /* smooth hover */
+}
+
+.popup-content button:hover {
+   background: linear-gradient(90deg, #21b56a, var(--green)); /* subtle color shift */
+   transform: translateY(-2px); /* slight lift */
+}
+
+
+/* Note / Extra Info */
+.note {
+  font-size: 14px;
+  margin-top: 15px;
+  color: #666;
+}
+
+/* Download Link */
+.download-link {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 6px;
+  transition: color 0.3s ease;
+}
+.download-link:hover {
+  text-decoration: underline;
+  color: #1f8e4e;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupIn {
+  0% { opacity: 0; transform: scale(0.7) translateY(40px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(-5px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.95); }
+}
+
+ @media (max-width: 767px) {
+  .popup-content {
+    width: 100%;
+    padding: 30px 25px;
+    max-width: 90%;
+    border-radius: 5px;
+  }
+ .close-btn {
+    font-size: 26px;
+    top: 14px;
+    right: 16px;
+  }
+  .popup-content h2 {
+    font-size: 22px;
+  }
+ }
+
+  @media (max-width: 480px){
+
+  .popup-content h2 {
+    font-size: 20px;
+  }
+
+  }
+

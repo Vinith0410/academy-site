@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Education Academy - Courses</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./popup.css">
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="course-header">
+    <div class="hero-text">
+      <h1>Grow with Professional Education</h1>
+      <p>
+        Upgrade your career with trending courses in Development, Data, and Design. Learn from industry experts with
+        real-world projects.
+      </p>
+      <a href="#courses" class="btn-primary">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- HOW WE TEACH SECTION -->
+<section class="how-we-teach ">
+  <div class="teach-header">
+    <h2>How We Teach</h2>
+    <p>Learn through hands-on projects and real-world experience. Our approach makes learning interactive, practical, and career-ready.</p>
+  </div>
+  <div class="teach-grid">
+    <div class="teach-card">
+      <i class="fas fa-video fa-3x"></i>
+      <h3>Live Classes</h3>
+      <p>Attend interactive sessions with expert instructors who guide you through concepts, answer questions, and demonstrate real-time problem-solving techniques.</p>
+    </div>
+
+    <div class="teach-card">
+      <i class="fas fa-laptop-code fa-3x"></i>
+      <h3>Practical Learning</h3>
+      <p>Engage in hands-on exercises where we show you each step in action, helping you build skills through doing and gain real-world experience effectively.</p>
+    </div>
+
+    <div class="teach-card">
+      <i class="fas fa-chalkboard-teacher fa-3x"></i>
+      <h3>Project-Based Learning</h3>
+      <p>Work on real projects from scratch, applying your knowledge in practical scenarios to create impressive work and develop a strong, career-ready portfolio.</p>
+    </div>
+
+    <div class="teach-card">
+      <i class="fas fa-user-tie fa-3x"></i>
+      <h3>Experienced Mentors</h3>
+      <p>Learn from industry professionals who provide guidance, share insider tips, and mentor you through projects to ensure practical learning and skill mastery.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- COURSES -->
+  <main>
+    <section id="courses" class="section">
+      <div class="section-header">
+        <h2>Our Popular Courses</h2>
+        <!-- Replace your controls section with this -->
+        <div class="controls">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search courses...">
+            <span id="clearSearch" title="Clear Search">✖</span>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid" id="cardsGrid"></div>
+    </section>
+
+    <!-- Popup Container -->
+<div id="applicationPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h2 id="popupTitle">Course Application</h2>
+    <p id="popupSubtitle">Complete the form below to apply for the course.</p>
+    <p id="courseInfo"></p>
+    <form id="applicationForm">
+      <input type="text" placeholder="Enter your full name" required />
+      <input type="email" placeholder="Enter your email address" required />
+      <input type="tel" placeholder="Enter your phone number" required />
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <p class="note">
+      Our team will contact you shortly with course details and next steps.
+    </p>
+  </div>
+</div>
+
+  </main>
+
+  <script src="./index.js"> </script>
+</body>
+
+</html>
