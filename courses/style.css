@@ -487,19 +487,12 @@
 
 }
  @media(max-width:600px) {
-   header {
-     height: 55vh
-   }
    .section-header {
      flex-direction: column;
      align-items: flex-start;
      gap: 12px
    }
  }
-
-
-
-
 /* Responsive */
 @media(max-width:1200px) {
   .teach-grid {
