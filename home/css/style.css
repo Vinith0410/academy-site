@@ -458,7 +458,7 @@
 @media(max-width: 768px){
   .home{
     padding: 50px 20px;
-    height:90vh;
+    height:100vh;
   }
   .home .media-icons{
     display: none;
