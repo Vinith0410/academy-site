@@ -8,26 +8,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./popup.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/navbar.css">
 </head>
-
 <body>
+   <header class="main-header">
+    <a href="#" class="brand">
+      <span class="green">Bright Future</span> <span class="orange">Academy</span>
+    </a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="../home/index.html">Home</a>
+      <a href="../about/about.html">About</a>
+      <a href="./index.html">Courses</a>
+      <a href="#">Event</a>
+      <a href="../contact/contact.html">Contact</a>
+      <button class="enroll-btn-nav">Enroll Now</button>
+    </div>
+  </div>
+</header>
 
   <!-- HERO -->
-  <section class="course-header">
-    <div class="hero-text">
-      <h1>Grow with Professional Education</h1>
-      <p>
-        Upgrade your career with trending courses in Development, Data, and Design. Learn from industry experts with
-        real-world projects.
+  <section class="site-header">
+    <div class="header-inner">
+      <h1 class="header-title">Courses</h1>
+      <h1 class="header-title-content">
+       Grow with Professional Education
+      </h1>
+      <p class="header-lead">
+        Upgrade your career with trending courses in
+        Development, Data, and Design. Learn from industry experts with real-world projects.
       </p>
-      <a href="#courses" class="btn-primary">Explore Courses</a>
+      <div class="header-ctas">
+        <a href="#courses" class="btn-outline">Explore courses</a>
+      </div>
     </div>
   </section>
 
   <!-- HOW WE TEACH SECTION -->
 <section class="how-we-teach ">
   <div class="teach-header">
-    <h2>How We Teach</h2>
+    <h2 class="teach-title">How We Teach</h2>
     <p>Learn through hands-on projects and real-world experience. Our approach makes learning interactive, practical, and career-ready.</p>
   </div>
   <div class="teach-grid">
@@ -97,6 +119,7 @@
   </main>
 
   <script src="./index.js"> </script>
+  <script src="../js/navbar.js"></script>
 </body>
 
 </html>

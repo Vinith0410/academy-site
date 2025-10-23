@@ -1,9 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us Section</title>
+
+  <style>
+    /* --- Reset & Base --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
  /* --- Hero Section --- */
     .site-header {
       width: 100%;
       color: #fff;
       position: relative;
       padding: 40px 100px;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                  url('./images/main.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -30,7 +51,7 @@
     }
 
     /* --- Paragraph --- */
-    .header-lead {
+    .lead {
       color: #f2f2f2;
       font-size: 1.1rem;
       line-height: 1.7;
@@ -104,7 +125,7 @@
         font-size: 2rem;
       }
 
-      .header-lead {
+      .lead {
         font-size: 1rem;
         margin-bottom: 30px;
       }
@@ -130,7 +151,7 @@
         margin-bottom: 20px;
       }
 
-      .header-lead {
+      .lead {
         font-size: 0.9rem;
         line-height: 1.6;
         margin-bottom: 25px;
@@ -159,3 +180,27 @@
         transform: translateY(0);
       }
     }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="header-title">About us</h1>
+      <h1 class="header-title-content">
+        Language learning that fits your life — practical, personal, powerful.
+      </h1>
+      <p class="lead">
+        Expert tutors · Flexible schedules · Real credentials. Build communication skills with
+        targeted lessons designed for measurable progress.
+      </p>
+      <div class="header-ctas">
+        <a href="#" class="btn-pill">Get started</a>
+        <a href="#" class="btn-outline">Explore courses</a>
+      </div>
+    </div>
+  </header>
+
+</body>
+</html>

@@ -7,31 +7,51 @@
   <!-- Fonts used across the provided snippets -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
+<header class="main-header">
+    <a href="#" class="brand">
+      <span class="green">Bright Future</span> <span class="orange">Academy</span>
+    </a>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+    <div class="navigation-items">
+      <a href="../home/index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="../courses/index.html">Courses</a>
+      <a href="#">Event</a>
+      <a href="../contact/contact.html">Contact</a>
+      <button class="enroll-btn-nav">Enroll Now</button>
+    </div>
+  </div>
+</header>
 
-  <!-- =========================
-       HEADER (added) - not a navigation bar, just header content
-       ========================= -->
-  <header class="site-header">
-      <div class="header-inner">
-          <h1>About us</h1>
-          <h1>Language learning that fits your life — practical, personal, powerful.</h1>
-          <p class="lead">Expert tutors · Flexible schedules · Real credentials. Build communication skills with targeted lessons designed for measurable progress.</p>
-          <div class="header-ctas">
-            <a href="#who" class="btn-pill">Get started</a>
-            <a href="#who" class="btn-outline">Explore courses</a>
-          </div>
+  <!-- HERO -->
+  <section class="site-header">
+    <div class="header-inner">
+      <h1 class="header-title">About us</h1>
+      <h1 class="header-title-content">
+        Language learning that fits your life — practical, personal, powerful.
+      </h1>
+      <p class="header-lead">
+        Expert tutors · Flexible schedules · Real credentials. Build communication skills with
+        targeted lessons designed for measurable progress.
+      </p>
+      <div class="header-ctas">
+        <a href="../courses/index.html" class="btn-pill">Get started</a>
+        <a href="../courses/index.html" class="btn-outline">Explore courses</a>
       </div>
-  </header>
+    </div>
+  </section>
+
 
   <main class="wrap" id="main">
-
-
       <!-- 3) Learn Something Every Day (testimonial/intro) -->
     <section class="learn-daily" aria-label="Learn something every day">
       <div class="photo fade-in" id="heroLeft">
-        <img src="./abt.jpg" alt="Portrait: smiling learner with laptop">
+        <img src="./images/abt.jpg" alt="Portrait: smiling learner with laptop">
       </div>
 
       <div class="learn-right fade-in" id="heroRight" style="position:relative;">
@@ -220,6 +240,7 @@
   </main>
 
   <script src="./script.js"></script>
+  <script src="../js/navbar.js"></script>
 
 </body>
 </html>

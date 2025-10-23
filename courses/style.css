@@ -21,63 +21,41 @@
  a {
    text-decoration: none
  }
-
- /* ---------- HERO ---------- */
- .course-header {
-   height: 45vh;
-   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25)), url('./images/main.jpg') center/cover no-repeat;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: #fff;
- }
-
- .course-header .hero-text {
-   max-width: 800px
- }
-
-.course-header h1 {
-   font-family: 'Montserrat', sans-serif;
-   font-size: 34px;
-   font-weight: 700;
-   margin-bottom: 12px
- }
-
- .course-header p {
-   font-size: 1.05rem;
-   margin-bottom: 20px;
-   color: #f1f1f1
- }
-
- .btn-primary {
-   background: linear-gradient(90deg, var(--orange), var(--green));
-   padding: 12px 24px;
-   border-radius: 999px;
-   color: #fff;
-   font-weight: 700;
-   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-   transition: .25s
- }
-
- .btn-primary:hover {
-   transform: translateY(-3px);
- }
-
+  .site-header{
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+     url('./images/main.jpg') center/cover no-repeat;
+     margin-top: 50px;
+  }
  /* HOW WE TEACH SECTION */
 .how-we-teach {
-  background: #f0fbf4; /* changed to green */
   padding: 50px 20px;
   text-align: center;
   width: 100%; /* full width */
 }
 
-.how-we-teach .teach-header h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.teach-title{
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0e9d58;
+      text-align: center;
+      position: relative;
+      margin-bottom: 60px;
 }
 
+.teach-title::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #ff8c00;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
 .how-we-teach .teach-header p {
-  color: var(--green); /* light text for readability */
+  color: #555; /* light text for readability */
   font-size: 1rem;
   margin-bottom: 40px;
 }
@@ -93,10 +71,10 @@
 }
 
 .teach-card {
-  background: #fff;
+  background: #f9fafc;
   padding: 30px 20px;
   border-radius: 15px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s, box-shadow 0.3s;
   max-width: 300px;
 }
@@ -115,7 +93,7 @@
 
 .teach-card p {
   font-size: 0.9rem;
-  color: #666;
+  color: #555;
 }
 
 .teach-card:hover {
