@@ -1,0 +1,214 @@
+ footer {
+      margin-top: 20px;
+      background-color: #ffffff; /* white background */
+      color: #1f2933; /* dark text for readability */
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 15px;
+      align-items: start;
+      gap: 20px;
+    }
+
+    .footer-logo{
+      max-width: 300px;
+    }
+    .green {
+      color: #27ae60;
+    }
+
+    .orange {
+      color: #f2994a;
+    }
+
+    .footer-logo h2 {
+      color: #0e7a4d; /* primary green */
+      margin-bottom: 10px;
+      font-size: 24px;
+      letter-spacing: 0.2px;
+    }
+
+    .footer-logo p {
+      color: #4b5563; /* muted dark */
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .social-icons-footer {
+      margin-top: 20px;
+    }
+
+    /* improved social icons for visibility */
+    .social-icons-footer a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #ecf9f3; /* very light green bg */
+      border-radius: 50%;
+      color: #0e7a4d; /* icon color (green) */
+      text-align: center;
+      line-height: 1;
+      font-size: 18px;
+      margin-right: 10px;
+      transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 2px 6px rgba(14,122,77,0.12);
+      text-decoration: none;
+    }
+
+    .social-icons-footer a:hover,
+    .social-icons-footer a:focus  {
+      background: #0e7a4d; /* green fill on hover */
+      color: #ffffff; /* icon becomes white */
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 6px 18px rgba(14,122,77,0.18);
+    }
+    .social-icons-footer a:hover i {
+      color: #ffffff ;
+    }
+
+    .footer-column h3 {
+      color: #0e7a4d; /* green headings */
+      margin-bottom: 18px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      color: #47535a; /* subtle dark */
+      text-decoration: none;
+      transition: color 0.18s, padding-left 0.18s;
+      display: inline-block;
+    }
+
+    .footer-column ul li a:hover {
+      color: #0e7a4d; /* green on hover */
+      padding-left: 6px;
+    }
+
+    .contact-info-footer p {
+      color: #47535a;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+    }
+
+    .contact-info-footer i {
+      color: #0e7a4d;
+      min-width: 18px;
+      text-align: center;
+    }
+
+    .store-hours {
+      background-color: #f3fbf7;
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      border: 1px solid #e6f6ef;
+    }
+
+    .store-hours p {
+      font-size: 15px;
+      color: #23403a;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid #eef6f2;
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 40px;
+    }
+
+    .footer-bottom a {
+      color: #0e7a4d;
+      text-decoration: none;
+    }
+
+    /* small accessibility improvements */
+    .social-icons a:focus {
+      outline: 3px solid rgba(14,122,77,0.16);
+      outline-offset: 3px;
+    }
+/* --- Better Two Column Layout (1024px–768px) --- */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 60px;
+    text-align: left;
+  }
+
+  .footer-logo,
+  .footer-column {
+    flex: 0 0 45%;  /* two per row with comfortable space */
+    max-width: 45%;
+  }
+
+  .footer-logo h2 {
+    font-size: 22px;
+  }
+
+  .footer-column h3 {
+    font-size: 17px;
+  }
+}
+
+    @media (max-width: 768px) {
+      footer {
+        padding: 40px 5%;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-logo,
+      .footer-column {
+        max-width: 100%;
+      }
+
+      .footer-column h3 {
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-container {
+        gap: 25px;
+      }
+
+      .footer-logo h2 {
+        font-size: 20px;
+      }
+
+      .footer-column h3 {
+        font-size: 16px;
+      }
+
+      .footer-bottom {
+        font-size: 13px;
+      }
+    }

@@ -3,407 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events — Education Academy</title>
+  <title>Event Cards - Bright Future Academy</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9d5a64a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9fafb;
-      color: #222;
-      overflow-x: hidden;
-    }
-
-    header {
-      background: linear-gradient(90deg, #0e9d58, #ff8c00);
-      color: white;
-      text-align: center;
-      padding: 90px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: -40px;
-      left: 0;
-      width: 100%;
-      height: 80px;
-      background: #f9fafb;
-      border-radius: 50% 50% 0 0;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      z-index: 2;
-      position: relative;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      margin-top: 10px;
-      opacity: 0.9;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Section Titles */
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #0e9d58;
-      text-align: center;
-      position: relative;
-      margin-bottom: 60px;
-    }
-
-    .section-title::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: #ff8c00;
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
-
-    /* About Events Section */
-    .about-events {
-      padding: 100px 10%;
-      text-align: center;
-      background: #fff;
-      animation: fadeInUp 1s ease;
-    }
-
-    .about-events p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: 20px auto 0;
-    }
-
-    .why-points {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 50px;
-      gap: 25px;
-    }
-
-    .why-card {
-      background: #f9fafb;
-      border-radius: 16px;
-      padding: 25px;
-      width: 260px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-      transition: all 0.3s ease;
-    }
-
-    .why-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.1);
-    }
-
-    .why-card span {
-      font-size: 2rem;
-      color: #ff8c00;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .why-card h4 {
-      font-size: 1.1rem;
-      color: #0e9d58;
-      margin-bottom: 8px;
-    }
-
-    /* Events Section */
-    .events-section {
-      padding: 100px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .event-card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      overflow: hidden;
-      width: 90%;
-      max-width: 1100px;
-      margin-bottom: 60px;
-      transition: all 0.4s ease;
-      transform: scale(1);
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1s forwards;
-    }
-
-    .event-card:nth-child(1) { animation-delay: 0.2s; }
-    .event-card:nth-child(2) { animation-delay: 0.4s; }
-    .event-card:nth-child(3) { animation-delay: 0.6s; }
-    .event-card:nth-child(4) { animation-delay: 0.8s; }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .event-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-    }
-
-    .event-card img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .event-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .event-content {
-      padding: 35px;
-    }
-
-    .event-date {
-      color: #ff8c00;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .event-content h3 {
-      font-size: 1.8rem;
-      margin: 12px 0;
-      color: #0e9d58;
-    }
-
-    .event-content p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .learn-more {
-      display: inline-block;
-      background: linear-gradient(90deg, #0e9d58, #ff8c00);
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .learn-more:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
-
-    /* Gallery */
-    .gallery {
-      padding: 100px 8%;
-      background: #fff;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(90deg, #0e9d58, #ff8c00);
-      color: white;
-      text-align: center;
-      padding: 90px 20px;
-    }
-
-    .cta-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .cta-section p {
-      font-size: 1rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      line-height: 1.7;
-    }
-
-    .cta-btn {
-      background: #fff;
-      color: #0e9d58;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .cta-btn:hover {
-      background: #ff8c00;
-      color: #fff;
-    }
-
-    footer {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      .event-card img { height: 250px; }
-      .event-content h3 { font-size: 1.5rem; }
-      .event-content { padding: 25px; }
-      .why-card { width: 100%; }
-    }
-  </style>
 </head>
 <body>
 
-  <header>
-    <h1>Explore Inspiring Academic Events</h1>
-    <p>Join our academy’s journey of innovation, knowledge-sharing, and leadership through upcoming seminars, workshops, and global forums designed for learners and educators.</p>
+  <header class="main-header">
+      <a href="#" class="brand">
+        <span class="green">Bright Future</span> <span class="orange">Academy</span>
+      </a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="../home/index.html">Home</a>
+        <a href="../about/about.html">About</a>
+        <a href="../courses/index.html">Courses</a>
+        <a href="./event.html">Event</a>
+        <a href="../contact/contact.html">Contact</a>
+        <button class="enroll-btn-nav">Enroll Now</button>
+      </div>
+    </div>
   </header>
 
-  <!-- About Events -->
+
+    <section class="site-header">
+    <div class="header-inner">
+      <h1 class="header-title">Upcoming Events</h1>
+      <h1 class="header-title-content">
+         Learn. Engage. Grow — Join Our Inspiring Academic Sessions & Webinars.
+      </h1>
+      <p class="lead">
+        From expert-led workshops to live virtual classes, experience learning that empowers you.
+        Stay updated with our latest events and never miss a chance to connect.
+      </p>
+      <div class="header-ctas">
+        <a href="#" class="btn-pill">View Events</a>
+      </div>
+    </div>
+  </section>
+
   <section class="about-events">
-    <h2 class="section-title">Why Our Events Matter</h2>
-    <p>At Education Academy, our events are more than just gatherings — they are experiences that inspire growth, collaboration, and transformation. We bring together educators, students, and industry experts to share ideas, discuss innovations, and shape the future of education. Whether it’s a leadership forum or a hands-on workshop, each event offers valuable opportunities for learning and networking.</p>
-
-    <div class="why-points">
-      <div class="why-card">
-        <span>🌍</span>
-        <h4>Global Exposure</h4>
-        <p>Connect with international educators, speakers, and experts from diverse academic backgrounds.</p>
-      </div>
-      <div class="why-card">
-        <span>💡</span>
-        <h4>Innovative Learning</h4>
-        <p>Participate in interactive workshops and sessions led by industry pioneers in education technology.</p>
-      </div>
-      <div class="why-card">
-        <span>🤝</span>
-        <h4>Collaborative Network</h4>
-        <p>Build lifelong relationships with peers and mentors across various academic domains.</p>
-      </div>
-      <div class="why-card">
-        <span>🎓</span>
-        <h4>Certification</h4>
-        <p>Earn participation certificates and recognition that enrich your professional profile.</p>
-      </div>
-    </div>
+      <h2 id="about-heading" class="event-section-title">Why Our Events Matter</h2>
+      <p>At Education Academy, our events are more than gatherings — they are experiences that inspire growth, collaboration, and transformation. We bring together educators, students, and industry experts to share ideas, discuss innovations, and shape the future of education.</p>
   </section>
 
-  <!-- Upcoming Events -->
-  <section class="events-section">
-    <h2 class="section-title">Upcoming Highlights</h2>
+  <div class="card-event" id="eventContainer"></div>
 
-    <div class="event-card">
-      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1000&q=80" alt="Event 1">
-      <div class="event-content">
-        <span class="event-date">October 20, 2025</span>
-        <h3>National Education Innovation Summit</h3>
-        <p>A summit uniting leading educators and policymakers to discuss the future of digital learning, innovation, and academic excellence.</p>
-        <a href="#" class="learn-more">Learn More</a>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img src="https://images.unsplash.com/photo-1584697964198-46e8b89c9b23?auto=format&fit=crop&w=1000&q=80" alt="Event 2">
-      <div class="event-content">
-        <span class="event-date">November 12, 2025</span>
-        <h3>AI & Digital Learning Workshop</h3>
-        <p>Hands-on learning session exploring how Artificial Intelligence is revolutionizing classroom experiences and personalized education.</p>
-        <a href="#" class="learn-more">Learn More</a>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img src="https://images.unsplash.com/photo-1581093588401-22d01c713b3b?auto=format&fit=crop&w=1000&q=80" alt="Event 3">
-      <div class="event-content">
-        <span class="event-date">December 5, 2025</span>
-        <h3>Teacher Development Conference</h3>
-        <p>An engaging conference empowering teachers with modern tools and global teaching approaches for better classroom engagement.</p>
-        <a href="#" class="learn-more">Learn More</a>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80" alt="Event 4">
-      <div class="event-content">
-        <span class="event-date">January 10, 2026</span>
-        <h3>Global Academic Leadership Forum</h3>
-        <p>Join top academic leaders to discuss transformative leadership strategies and the future direction of global education.</p>
-        <a href="#" class="learn-more">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="gallery">
-    <h2 class="section-title">Past Event Highlights</h2>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=80" alt="">
-      <img src="https://images.unsplash.com/photo-1584697964403-80e0e78f9301?auto=format&fit=crop&w=800&q=80" alt="">
-      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80" alt="">
-      <img src="https://images.unsplash.com/photo-1590608897129-79da98d159ba?auto=format&fit=crop&w=800&q=80" alt="">
-      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="">
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="">
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <h2>Be Part of Our Next Event</h2>
-    <p>Don’t miss the chance to engage with inspiring educators, global innovators, and academic leaders. Register now to experience the power of collaborative learning and transformation.</p>
-    <a href="#" class="cta-btn">Register Now</a>
-  </section>
-
+  <!-- Footer Section -->
   <footer>
-    &copy; 2025 Education Academy. All Rights Reserved. | Designed with ❤️ by Education Academy Team.
+    <div class="footer-container">
+      <!-- Left section -->
+      <div class="footer-logo">
+        <h2> <span class="green">Bright Future</span> <span class="orange">Academy</span></h2>
+        <p>Brighten your future with Bright Future Academy — where knowledge meets opportunity and success begins.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories / Popular Topics -->
+      <div class="footer-column">
+        <h3>Popular Courses</h3>
+        <ul>
+          <li><a href="#">Full Stack Web Development</a></li>
+          <li><a href="#">Data Analytics</a></li>
+          <li><a href="#">Python Web Development</a></li>
+          <li><a href="#">UI & UX</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-column contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt" ></i>Karur , Tamil Nadu-639004</p>
+        <p><i class="fas fa-phone" ></i> +91 9087315789</p>
+        <p><i class="fas fa-envelope" ></i> info@brightfutureacademy.com</p>
+        <div class="social-icons" >
+          <a href="#" ><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Bright Future Academy. All Rights Reserved.
+    </div>
   </footer>
+
+  <script src="./script.js"></script>
+  <script src="../js/navbar.js"></script>
 
 </body>
 </html>
