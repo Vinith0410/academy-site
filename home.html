@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>Document</title>
+  <style>
+body{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.offer-section {
+    padding: 80px 0;
+}
+
+.offer-container {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Left Side */
+.offer-badge {
+    background: #d1fae5;     /* Light Green background */
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #16a34a;          /* Primary Green text */
+    border: 1px solid #16a34a22; /* subtle green border */
+    display: inline-block;
+}
+
+
+.offer-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.offer-desc {
+    font-size: 17px;
+    text-align: left;
+    max-width: 590px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Button */
+/* Button — Green */
+.offer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: #16a34a; /* GREEN */
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.offer-btn:hover {
+    background: #0f8a3a; /* darker green */
+}
+
+
+.arrow {
+    font-size: 20px;
+}
+
+/* Right Side */
+.offer-right {
+    flex: 1;
+}
+
+/* Offer Box (Tailwind style converted to CSS) */
+.offer-box {
+    background: #ffffff;            /* bg-card */
+    color: #1a1a1a;                 /* text-card-foreground */
+    border: 1px solid #e5e7eb;      /* border */
+    border-radius: 12px;            /* rounded-lg */
+    padding: 40px;
+}
+
+.offer-subtitle {
+    /* font-size: 24px;
+    font-weight: 700; */
+    margin-bottom: 20px;
+}
+
+.offer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Tick Icon Style */
+.tick-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    fill: #16a34a; /* green */
+}
+.offer-list li {
+    font-size: 17px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+/* Tick Icon — Green */
+.offer-list svg {
+    stroke: #16a34a !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .offer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .offer-right {
+        width: 100%;
+    }
+
+    .offer-box {
+        text-align: left;
+        margin-top: 30px;
+    }
+
+    .offer-list li {
+        justify-content: start;
+    }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+
+<section class="offer-section">
+    <div class="offer-container">
+
+        <!-- LEFT SIDE -->
+        <div class="offer-left">
+            <span class="offer-badge">Why Choose</span>
+
+            <h2 class="offer-title"> Bright Future Academy</h2>
+
+            <p class="offer-desc">
+                Build your future with industry-oriented training, hands-on projects,
+                personalized guidance, and complete career support. At Bright Future Academy,
+                we focus on real-world learning to make you job-ready and confident.
+            </p>
+
+            <a href="#" class="offer-btn">
+                Explore Courses
+                <span class="arrow">→</span>
+            </a>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="offer-right">
+            <div class="offer-box">
+                <h1 class="offer-subtitle">
+                  What You Get
+                </h1>
+
+                <ul class="offer-list">
+
+    <li>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-primary flex-shrink-0 mt -0.5">
+<path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+<path d="m9 11 3 3L22 4"></path>
+</svg>
+
+        Project-Based Learning
+    </li>
+
+    <li>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-primary flex-shrink-0 mt -0.5">
+<path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+<path d="m9 11 3 3L22 4"></path>
+</svg>
+        24/7 Doubt Support
+    </li>
+
+    <li>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-primary flex-shrink-0 mt -0.5">
+<path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+<path d="m9 11 3 3L22 4"></path>
+</svg>
+        Expert Instructors
+    </li>
+
+    <li>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-primary flex-shrink-0 mt -0.5">
+<path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+<path d="m9 11 3 3L22 4"></path>
+</svg>
+        Career Support & Mentorship
+    </li>
+
+    <li>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-primary flex-shrink-0 mt -0.5">
+<path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+<path d="m9 11 3 3L22 4"></path>
+</svg>
+        Internship Opportunities
+    </li>
+
+    <li>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-5 h-5 text-primary flex-shrink-0 mt -0.5">
+<path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+<path d="m9 11 3 3L22 4"></path>
+</svg>
+        Affordable ₹49 Pricing
+    </li>
+
+</ul>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+</body>
+</html>

@@ -72,3 +72,40 @@ setInterval(() => {
       }
     });
   });
+
+
+  // academy status
+
+  (function(){
+    const counters = document.querySelectorAll('#academy-stats .stat-number');
+    let started = false;
+
+    function animateCounters(){
+      if(started) return;
+      const rect = document.querySelector('#academy-stats').getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100){
+        started = true;
+        counters.forEach(el => {
+          const target = +el.getAttribute('data-target');
+          const duration = 1400;
+          let start = 0;
+          const stepTime = Math.max(10, Math.floor(duration / (target || 100)));
+
+          const step = () => {
+            start += Math.ceil(target / (duration / stepTime));
+            if(start >= target){
+              el.textContent = (target % 1 === 0) ? target + "+" : target.toFixed(1) + "+";
+            } else {
+              el.textContent = start;
+              setTimeout(step, stepTime);
+            }
+          };
+
+          step();
+        });
+      }
+    }
+
+    window.addEventListener('scroll', animateCounters, {passive:true});
+    setTimeout(animateCounters, 100);
+  })();
