@@ -1,5 +1,9 @@
+.same-background{
+  background: linear-gradient(to bottom right, #f6fff8, #eafbea);
+}
 .modal-courses-section {
-  padding: 70px 20px;
+  /* padding: 30px 20px; */
+  padding-top: 40px;
   text-align: center;
   /* background: #f0fff6; soft green background */
 }
@@ -106,6 +110,7 @@
 .modal-learn-link-all {
   padding: 10px;
   margin-top: 15px;
+  margin-bottom: 25px;
   text-decoration: none;
   text-align: center;
   background-color: #16a34a; /* green */

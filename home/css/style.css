@@ -257,7 +257,7 @@
 .about-readmore {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #2696E9;
+  background-color: #16a34a;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -266,7 +266,7 @@
 }
 
 .about-readmore:hover {
-  background-color: #0a6fd3;
+  background-color: #0f8a3a;
 }
 
 /* academy status  */

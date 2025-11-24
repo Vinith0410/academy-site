@@ -19,7 +19,7 @@
 
   body {
     font-family: 'Poppins', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-    background: var(--bg);
+    background: #ffffff;
     color: var(--text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -215,7 +215,7 @@
   .sub-heading {
   font-size: 20px;
   font-weight: 600;
-  color: #1B7743; 
+  color: #1B7743;
   }
 
   .sub-text {
