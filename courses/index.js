@@ -185,11 +185,7 @@ const courses = [
 ];
 
 const coursePDFs = {
-  "Full Stack Web Development": "./pdfs/fullstack.pdf",
-  "Python Web Development": "./pdfs/pythonweb.pdf",
-  "Data Analytics": "./pdfs/dataanalytics.pdf",
-  "UI & UX Design": "./pdfs/uiux.pdf",
-  // add all others similarly...
+  "Full Stack Web Development": "./pdfs/Bright-Future-Academy-Full-Stack Development Course Schedule.pdf"
 };
 
 function openPopup(courseName) {
@@ -204,19 +200,17 @@ function openPopup(courseName) {
   title.textContent = `${courseName} Application`;
   subtitle.textContent = `Complete the form below to apply for ${courseName}.`;
 
-  let infoHTML = `
-    To know more about this course
-  `;
+  let infoHTML = ``;
 
   if (pdfPath) {
-    infoHTML += `
+    infoHTML += `To know more about this course 
       <a href="${pdfPath}" download class="download-link">
         <i class="fa fa-download"></i>
       </a>.
     `;
   } else {
     infoHTML += `
-      <span style="color:#999;"> course schedule not available.</span>
+      <span style="color:#999;">If you have any questions about the course, don’t hesitate to contact us. We’re here to guide you at every step.</span>
     `;
   }
 
@@ -249,8 +243,6 @@ document.querySelectorAll(".enroll-btn").forEach((btn) => {
     openPopup(courseName);
   });
 });
-
-
 
     const grid=document.getElementById('cardsGrid');
    const searchInput = document.getElementById('searchInput');

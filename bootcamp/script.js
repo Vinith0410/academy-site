@@ -1,124 +1,105 @@
 const courseData = [
   {
-    tag:"MOST POPULAR",
-    title:"Full Stack Development",
-    internship:"10-day internship",
-    liveTraining:"20+ hours of live training",
-    description:"Daily practical builds & deployments",
-    price:"₹3,499",
-    oldPrice:"₹4,999",
-    bullets:["React + Node.js delivery","Cloud deployment lab"],
-    info:"Includes project reviews, certificate, and loyalty discount.",
+    tag:"TRENDING & POPULAR",
+    title:"Power BI  Analytics",
+    internship:"7-day Bootcamp",
+    liveTraining:"5+ hours of live training",
+    description:"Data analysis, visualization & reports",
+    price:"Free",
+    oldPrice:"₹2500",
+    bullets:["Power BI Desktop","Data Visualization"],
+    info:"Includes certificate & project support.",
     buttonText:"Apply Now",
-    status:"open",
-    registrationEnd:"2025-12-05",
+    status:"close",
+    registrationEnd:"2025-12-07",
     infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"(Virtual Event)" },
-      { icon:"fa-user", line1:"Prof. Kavitha", line2:"Ramesh" },
-      { icon:"fa-microphone", line1:"Learn with", line2:"Bright Future Academy" },
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Analytics Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
       { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
     ]
   },
   {
-    tag:"HOT",
-    title:"AI / ML Internship",
-    internship:"15-day internship",
-    liveTraining:"25+ hours live",
-    description:"Model building, datasets & training",
-    price:"₹4,999",
-    oldPrice:"₹6,499",
-    bullets:["Python + ML algorithms","Dataset processing"],
+    tag:"MOST POPULAR",
+    title:"Full Stack Development",
+    internship:"10-day Bootcamp",
+    liveTraining:"20+ hours of live training",
+    description:"Daily practical builds & deployments",
+    price:"₹500",
+    oldPrice:"₹2500",
+    bullets:["HTML CSS JS BOOTSTRAP"," NODE.JS MONGODB"],
+    info:"Includes certificate & project support.",
+    buttonText:"Apply Now",
+    status:"close",
+    registrationEnd:"2024-12-05",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Offline", line2:"(NSN Collage Karur)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
+  {
+    tag:"TRENDING",
+    title:"UI UX  Design",
+    internship:"5-day Bootcamp",
+    liveTraining:"10+ hours live",
+    description:"Daily practical and Model building",
+    price:"₹500",
+    oldPrice:"₹1500",
+    bullets:["Sketch Work","Figma"],
     info:"Includes certificate & project support.",
     buttonText:"Enroll",
     status:"close",
     registrationEnd:"2025-10-01",
     infoDetails:[
-      { icon:"fa-location-dot", line1:"Hybrid", line2:"Online + Lab" },
-      { icon:"fa-user", line1:"Dr. Rao", line2:"Lead Mentor" },
-      { icon:"fa-microphone", line1:"Hands-on", line2:"Dataset Workshops" },
-      { icon:"fa-book", line1:"Project", line2:"Model Building" }
+      { icon:"fa-location-dot", line1:"Offline", line2:"(NSN Collage Karur)" },
+      { icon:"fa-user", line1:"Academy", line2:"Designing Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
     ]
   },
   {
-    tag:"TOP",
-    title:"Cloud DevOps",
-    internship:"7-day internship",
+    tag:"MOST POPULAR",
+    title:"Front End Development",
+    internship:"7-day Bootcamp",
     liveTraining:"15+ hours AWS",
-    description:"CI/CD pipeline & docker labs",
-    price:"₹2,999",
-    oldPrice:"₹3,999",
-    bullets:["Docker + Kubernetes","AWS deployments"],
-    info:"Project + certification included",
+    description:"Daily practical builds & deployments",
+    price:"₹800",
+    oldPrice:"₹2,500",
+    bullets:["HTML CSS","JS BOOTSTRAP"],
+    info:"Includes certificate & project support.",
     buttonText:"Apply",
     status:"open",
-    registrationEnd:"2025-11-30",
+    registrationEnd:"2024-11-30",
     infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"AWS Labs" },
-      { icon:"fa-user", line1:"S. Mohan", line2:"Cloud Trainer" },
-      { icon:"fa-microphone", line1:"Live Labs", line2:"CI/CD Sessions" },
-      { icon:"fa-book", line1:"Hands-on", line2:"Deployment Exercises" }
+      { icon:"fa-location-dot", line1:"Offline", line2:"(ArulMurugan College Karur)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
     ]
   },
   {
-    tag:"TRENDING",
-    title:"Cyber Security",
-    internship:"12-day internship",
-    liveTraining:"30+ hours",
-    description:"Ethical hacking + network labs",
-    price:"₹4,499",
+    tag:"MOST POPULAR",
+    title:"Front End Development",
+    internship:"10-day Bootcamp",
+    liveTraining:"5+ hours",
+    description:"Daily practical builds & deployments",
+    price:"Free",
     oldPrice:"₹5,499",
-    bullets:["Pentesting labs","Network analysis"],
-    info:"Certificate + real tools",
+    bullets:["HTML CSS","JS BOOTSTRAP"],
+    info:"Includes certificate & project support.",
     buttonText:"Register",
     status:"close",
     registrationEnd:"2025-09-15",
     infoDetails:[
-      { icon:"fa-location-dot", line1:"Onsite", line2:"(Lab-Based)" },
-      { icon:"fa-user", line1:"A. Srinivasan", line2:"Ethical Hacker" },
-      { icon:"fa-microphone", line1:"Tool-based", line2:"Real Tools" },
-      { icon:"fa-book", line1:"Labs", line2:"CTFs & Pentests" }
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
     ]
   },
-  {
-    tag:"NEW",
-    title:"UI/UX Design",
-    internship:"5-day internship",
-    liveTraining:"10+ hours",
-    description:"Figma workshop",
-    price:"₹1,999",
-    oldPrice:"₹2,499",
-    bullets:["Wireframing","Visual design"],
-    info:"Certificate included",
-    buttonText:"Register",
-    status:"open",
-    registrationEnd:"2026-01-10",
-    infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"Figma Labs" },
-      { icon:"fa-user", line1:"M. Leela", line2:"Design Mentor" },
-      { icon:"fa-microphone", line1:"Workshops", line2:"Figma + UX" },
-      { icon:"fa-book", line1:"Portfolio", line2:"Project Kit" }
-    ]
-  },
-  {
-    tag:"HOT",
-    title:"Android Development",
-    internship:"10-day internship",
-    liveTraining:"18+ hours",
-    description:"Kotlin + Jetpack",
-    price:"₹3,299",
-    oldPrice:"₹4,199",
-    bullets:["UI components","API integration"],
-    info:"Certificate + project",
-    buttonText:"Apply",
-    status:"close",
-    registrationEnd:"2025-11-01",
-    infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"Hands-on" },
-      { icon:"fa-user", line1:"R. Kumar", line2:"Android Coach" },
-      { icon:"fa-microphone", line1:"Live Labs", line2:"App Building" },
-      { icon:"fa-book", line1:"Project", line2:"Publishable App" }
-    ]
-  }
+
 ];
 
 /* Utilities */
@@ -191,7 +172,6 @@ function buildCards(){
           <div class="price">${escapeHtml(item.price)}</div>
 
           <div class="old-price-wrap">
-            ${ discountPct > 0 ? `<div class="discount-badge">-${discountPct}%</div>` : `<div class="discount-badge hide" aria-hidden="true"></div>` }
             <div class="old-price">${escapeHtml(item.oldPrice)}</div>
           </div>
         </div>

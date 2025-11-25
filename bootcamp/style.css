@@ -184,7 +184,7 @@
   }
 
   /* Discount badge (above old price) */
-  .discount-badge {
+  /* .discount-badge {
     position: absolute;
     top: -12px;
     right: 10px;
@@ -201,7 +201,7 @@
   .discount-badge.hide {
     transform: translateY(-6px) scale(0.92);
     opacity: 0;
-  }
+  } */
 
   .bullets {
     margin-top: 16px;
@@ -243,8 +243,8 @@
     transition: transform 180ms ease, box-shadow 220ms ease, opacity 180ms ease, background 220ms ease;
     background: var(--green);
     color: white;
-    text-transform: lowercase;
     box-shadow: 0 8px 18px rgba(11, 113, 52, 0.12);
+    text-transform: capitalize;
   }
 
   .btn:active {
@@ -288,12 +288,6 @@
     /* green color */
     font-size: 18px;
     margin-top: 3px;
-  }
-
-    @media(max-width:950px) {
-    .grid {
-      /* grid-template-columns: repeat(2, 1fr); */
-    }
   }
 
   @media(max-width:650px) {

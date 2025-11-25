@@ -20,11 +20,14 @@
  a {
    text-decoration: none
  }
-  .site-header{
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-     url('./images/main.jpg') center/cover no-repeat;
-     margin-top: 50px;
-  }
+ .feedback-home{
+  background-color: #f5fff7;
+ }
+.site-header{
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('./images/main.jpg') center/cover no-repeat;
+    margin-top: 50px;
+}
  /* HOW WE TEACH SECTION */
 .how-we-teach {
   padding: 50px 20px;

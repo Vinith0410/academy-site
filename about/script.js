@@ -15,24 +15,4 @@
         img.addEventListener('mouseleave', function(){ img.style.transform = 'none'; });
       });
 
-      // Subscribe form basic flow (button now inside the input wrap)
-      const form = document.getElementById('subscribeForm');
-      const email = document.getElementById('email');
-      const btn = document.getElementById('subscribeBtn');
-
-      function validEmail(e){ return /\S+@\S+\.\S+/.test(e); }
-
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        const val = email.value.trim();
-        if(!val || !validEmail(val)){
-          email.focus();
-          email.setAttribute('aria-invalid','true');
-          alert('Please enter a valid email address.');
-          return;
-        }
-        btn.disabled = true; btn.textContent = 'SUBSCRIBING...';
-        setTimeout(()=>{ btn.disabled = false; btn.textContent = 'SUBSCRIBE'; email.value = ''; alert('Thanks — you have been subscribed!'); }, 800);
-      });
-
     });
