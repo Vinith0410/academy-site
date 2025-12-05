@@ -1,0 +1,362 @@
+  :root {
+    --green: #0faa3f;
+    --green-light: #e8ffef;
+    --red: #d62828;
+    --muted: #455049;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+  }
+
+  body {
+    background: #f5fff7;
+    font-family: "Poppins", sans-serif;
+  }
+  .site-header{
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+     url('./image/main.jpg') center/cover no-repeat;
+     margin-top: 50px;
+  }
+  .event-cards{
+    padding: 40px 20px;
+  }
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(10, 10, 10, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    /* hide any overflow from ribbons */
+    transition:
+      transform 260ms cubic-bezier(.2, .9, .2, 1),
+      box-shadow 260ms cubic-bezier(.2, .9, .2, 1),
+      border-color 260ms ease;
+    will-change: transform;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 36px rgba(10, 10, 10, 0.12);
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  .card:active {
+    transform: translateY(-2px);
+  }
+
+  /* REAL RIBBON */
+  .ribbon {
+    width: 160px;
+    background: var(--green);
+    color: white;
+    font-weight: 700;
+    padding: 6px 2px;
+    position: absolute;
+    top: 16px;
+    right: -45px;
+    text-align: center;
+    transform: rotate(45deg) translateZ(0) scale(1);
+    transform-origin: center;
+    pointer-events: none;
+    /* non-clickable; state follows registration date */
+    transition:
+      background 360ms cubic-bezier(.2, .9, .2, 1),
+      transform 280ms cubic-bezier(.25, .9, .25, 1),
+      opacity 280ms ease,
+      box-shadow 280ms ease;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    letter-spacing: 0.6px;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+
+  .ribbon.open {
+    background: linear-gradient(180deg, var(--green), #089834);
+    color: #fff;
+  }
+
+  .ribbon.close {
+    background: linear-gradient(180deg, var(--red), #b21b1b);
+    color: #fff;
+    transform: rotate(45deg) translateZ(0) scale(0.98);
+    opacity: 0.95;
+  }
+
+  /* subtle pop-in effect for newly-open ribbons */
+  .ribbon.pop {
+    animation: ribbonPop 420ms cubic-bezier(.2, .9, .2, 1) both;
+  }
+
+  @keyframes ribbonPop {
+    0% {
+      transform: rotate(45deg) scale(0.6);
+      opacity: 0;
+    }
+
+    60% {
+      transform: rotate(45deg) scale(1.06);
+      opacity: 1;
+    }
+
+    100% {
+      transform: rotate(45deg) scale(1);
+    }
+  }
+
+  .tag {
+    background: var(--green-light);
+    color: var(--green);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .title {
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .linkline {
+    margin-top: 10px;
+    display: inline-block;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 16px;
+    gap: 14px;
+    position: relative;
+  }
+
+  .price {
+    font-size: 26px;
+    font-weight: 800;
+    color: #064d1f;
+  }
+
+  .old-price-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .old-price {
+    font-size: 13px;
+    color: #999;
+    text-decoration: line-through;
+    margin-top: 6px;
+  }
+
+  /* Discount badge (above old price) */
+  /* .discount-badge {
+    position: absolute;
+    top: -12px;
+    right: 10px;
+    transform: translateY(0) scale(1);
+    color: var(--green);
+    font-weight: 450;
+    font-size: 11px;
+    padding: 6px 8px;
+    box-shadow: 0 6px 14px rgba(11, 113, 52, 0.06);
+    transition: transform 360ms cubic-bezier(.2, .9, .2, 1), opacity 260ms ease;
+    opacity: 1;
+  }
+
+  .discount-badge.hide {
+    transform: translateY(-6px) scale(0.92);
+    opacity: 0;
+  } */
+
+  .bullets {
+    margin-top: 16px;
+  }
+
+  .bullet {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-top: 5px;
+  }
+
+  .info {
+    margin-top: 14px;
+    padding: 12px;
+    background: #edfff3;
+    border: 1px dashed #b6e7c5;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .btn {
+    margin-top: 16px;
+    width: 100%;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 220ms ease, opacity 180ms ease, background 220ms ease;
+    background: var(--green);
+    color: white;
+    box-shadow: 0 8px 18px rgba(11, 113, 52, 0.12);
+    text-transform: capitalize;
+  }
+
+  .btn:active {
+    transform: translateY(1px) scale(0.998);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(11, 113, 52, 0.14);
+  }
+
+  .btn.disabled {
+    background: #c3ddcd;
+    color: #6f7c72;
+    cursor: not-allowed;
+    opacity: 0.85;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .info-grid {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 18px;
+    column-gap: 40px;
+    max-width: 420px;
+    color: #333;
+    font-size: 14px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .info-item i {
+    color: #0E8C42;
+    /* green color */
+    font-size: 18px;
+    margin-top: 3px;
+  }
+
+  @media(max-width:650px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* small responsive tweaks */
+  @media (max-width:420px) {
+    .ribbon {
+      width: 120px;
+      right: -40px;
+      font-size: 12px;
+    }
+
+    .discount-badge {
+      font-size: 11px;
+      padding: 5px 7px;
+      top: -16px;
+    }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-bottom: 1px solid #eef2f0;
+  }
+  .modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #064d1f;
+  }
+  .modal-close {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+  }
+  .modal-form input {
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+  }
