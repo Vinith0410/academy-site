@@ -1,0 +1,106 @@
+/* Page background */
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f7;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Back link */
+a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #6a5acd;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-top: 15px;
+  color: #333;
+}
+
+/* Form container */
+form {
+  max-width: 550px;
+  margin: 25px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Labels */
+form label {
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Inputs & Textarea */
+form input,
+form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 95%;
+  outline: none;
+  transition: 0.25s ease;
+  background: #fdfdfd;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #6a5acd;
+  box-shadow: 0px 0px 6px rgba(106, 90, 205, 0.3);
+}
+
+/* Textarea size */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button */
+button {
+  padding: 14px;
+  background: #6a5acd;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #5848c2;
+  transform: translateY(-2px);
+}
+
+#currentImage{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  form {
+    padding: 18px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}

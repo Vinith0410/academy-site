@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/admin/pages/css/addcourses.css">
+</head>
+<body>
+
+  <a href="/admin/courses">Back to Courses</a>
+  <h2>Add New Course</h2>
+
+  <form action="/admin/courses/add" method="post" autocomplete="off" enctype="multipart/form-data">
+    <label for="name">Course Title:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="price">Course Price:</label>
+    <input type="number" id="price" name="price" required>
+    <label for="oldPrice">Course old Price:</label>
+    <input type="number" id="oldPrice" name="oldPrice" required>
+    <label for="duration">Course Duration:</label>
+    <input type="text" id="duration" name="duration" required>
+    <label for="image">Course Image:</label>
+    <input type="file" id="image" name="img" accept="image/*" required>
+    <label for="tag">Course Tag:</label>
+    <input type="text" id="tag" name="tag" required>
+    <label for="desc">Course Description:</label>
+    <textarea id="desc" name="desc" required></textarea>
+    <label for="points">Course Points:</label>
+    <textarea id="points" name="points" placeholder="html & css, javascript, react, nodejs, mongodb" required></textarea>
+
+    <button type="submit">Add Course</button>
+  </form>
+
+</body>
+</html>
