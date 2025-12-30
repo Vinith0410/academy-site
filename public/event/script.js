@@ -13,9 +13,9 @@ const courseData = [
     status:"open",
     registrationEnd:"2025-12-05",
     infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"(Virtual Event)" },
-      { icon:"fa-user", line1:"Prof. Kavitha", line2:"Ramesh" },
-      { icon:"fa-microphone", line1:"Learn with", line2:"Bright Future Academy" },
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
       { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
     ]
   },
@@ -33,8 +33,8 @@ const courseData = [
     status:"close",
     registrationEnd:"2025-10-01",
     infoDetails:[
-      { icon:"fa-location-dot", line1:"Hybrid", line2:"Online + Lab" },
-      { icon:"fa-user", line1:"Dr. Rao", line2:"Lead Mentor" },
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"" },
       { icon:"fa-microphone", line1:"Hands-on", line2:"Dataset Workshops" },
       { icon:"fa-book", line1:"Project", line2:"Model Building" }
     ]
@@ -234,41 +234,106 @@ function escapeHtml(str){
 /* initial render */
 buildCards();
 
-const modal = document.getElementById("registerModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalClose = document.getElementById("modalClose");
-const form = document.getElementById("registerForm");
-const inputName = document.getElementById("inputName");
-const inputEmail = document.getElementById("inputEmail");
-const inputPhone = document.getElementById("inputPhone");
+function openPopup(titleText) {
+  const popup = document.getElementById("applicationPopup");
+  const title = document.getElementById("popupTitle");
+  const subtitle = document.getElementById("popupSubtitle");
 
-function openModal(title){
-  modalTitle.textContent = title;
-  modal.classList.add("active");
-  modal.setAttribute("aria-hidden","false");
+  title.textContent = `${titleText} Application`;
+  subtitle.textContent = `Complete the form below to apply for ${titleText}.`;
+
+  // populate hidden input so form/FormData always includes the title
+  const eventFormTitle = document.getElementById('eventFormTitle');
+  if(eventFormTitle) eventFormTitle.value = titleText;
+
+  popup.style.display = "flex";
+  popup.style.animation = "fadeIn 0.3s ease-in-out";
 }
-function closeModal(){
-  modal.classList.remove("active");
-  modal.setAttribute("aria-hidden","true");
-  form.reset();
+
+function showErrorToast(message){
+  Toastify({
+    text: message,
+    duration: 4000,
+    gravity: "top",
+    position: "right",
+    close: true,
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(135deg, #ff416c, #ff4b2b)",
+      borderRadius: "10px",
+      boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
+      fontWeight: "600"
+    }
+  }).showToast();
 }
+
+function bounceSuccessToast(message){
+  Toastify({
+    text: "" + message,
+    duration: 4500,
+    gravity: "top",
+    position: "right",
+    className: "bounce-toast",
+    close: true,
+    stopOnFocus: true
+  }).showToast();
+}
+
+async function handleSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+
+  const title = document.getElementById("popupTitle").textContent.replace(" Application","");
+  const programType = "event";
+  const data = new FormData(form);
+  const json = Object.fromEntries(data.entries());
+  json.programType = programType;
+  json.title = title;
+
+  try{
+    const res = await fetch("/event/apply",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(json)
+    })
+    const data = await res.json();
+    if(data.success){
+      bounceSuccessToast("🎉 Application submitted successfully! Our team will contact you soon.");
+      closePopup();
+    }else{
+      showErrorToast("❌ Application failed. Please try again.");
+    }
+
+  }catch(err){
+    console.error("Error:", err);
+    alert("An error occurred. Please try again.");
+  }
+}
+
+function closePopup() {
+  const popup = document.getElementById("applicationPopup");
+  popup.style.animation = "fadeOut 0.3s ease-in-out";
+  setTimeout(() => {
+    popup.style.display = "none";
+    document.getElementById("applicationForm").reset();
+  }, 300);
+}
+
+// Optional Fade-Out Animation
+const style = document.createElement("style");
+style.textContent = `
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}`;
+document.head.appendChild(style);
+
 function attachHandlers(){
   document.querySelectorAll(".card .btn:not(.disabled)").forEach(btn=>{
     btn.addEventListener("click",()=>{
       const t = btn.getAttribute("data-title") || btn.closest(".card").querySelector(".title").textContent;
-      openModal(t);
+      openPopup(t);
     });
   });
 }
 attachHandlers();
-
-modalClose.addEventListener("click", closeModal);
-modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-form.addEventListener("submit", (e)=>{
-  e.preventDefault();
-  const name = inputName.value.trim();
-  const email = inputEmail.value.trim();
-  const phone = inputPhone.value.trim();
-  if(!name || !email || !phone) return;
-  closeModal();
-});

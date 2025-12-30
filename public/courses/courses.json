@@ -1,6 +1,6 @@
  [
   {
-    "name": "Full Stack Web Development",
+    "name": "MERN Stack",
     "price": 10000,
     "oldPrice": 12999,
     "duration": "3 - 4 Months",
@@ -11,8 +11,8 @@
       "HTML & CSS",
       "JavaScript",
       "Bootstrap",
-      "SQL & MongoDB",
-      "PHP",
+      "React JS",
+      "MongoDB",
       "Node & Express"
     ]
   },
@@ -94,8 +94,9 @@
     "desc": "Master modern frontend development with React. Build fast, dynamic, and scalable web applications with real-world projects, deployment, and interview guidance.",
     "points": [
       "HTML CSS & JS",
-      "React Basics",
+      "React ",
       "Components & Props",
+      "React Redux ",
       "React Routing"
     ]
   },
@@ -123,9 +124,9 @@
     "tag": "Beginner to Advanced",
     "desc": "Learn backend development with Node.js & Express. Requires basic frontend and database knowledge. Build APIs, deploy projects, and get interview and resume guidance.",
     "points": [
-    "PHP",
-    "Node.js",
-    "Express.js",
+    "Node js",
+    "Express js",
+    "MongoDB",
     "Postman",
     "API"
   ]

@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Courses – Skill-Focused & Affordable Programs | Bright Future Academy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
@@ -12,6 +14,7 @@
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/feedback.css">
+  <link rel="stylesheet" href="../css/toast.css">
 </head>
 <body>
    <header class="main-header">
@@ -106,10 +109,12 @@
     <h2 id="popupTitle">Course Application</h2>
     <p id="popupSubtitle">Complete the form below to apply for the course.</p>
     <p id="courseInfo"></p>
-    <form id="applicationForm">
-      <input type="text" placeholder="Enter your full name" required />
-      <input type="email" placeholder="Enter your email address" required />
-      <input type="tel" placeholder="Enter your phone number" required />
+    <form id="applicationForm" onsubmit="handleCourseSubmit(event)">
+      <input type="hidden" name="programType" value="course" />
+      <input type="hidden" name="title" id="courseFormTitle" value="" />
+      <input type="text" name="fullName" placeholder="Enter your full name" required />
+      <input type="email" name="email" placeholder="Enter your email address" required />
+      <input type="tel" name="phone" placeholder="Enter your phone number" required />
 
       <button type="submit">Submit Application</button>
     </form>

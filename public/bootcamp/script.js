@@ -1,5 +1,25 @@
 const courseData = [
   {
+    tag:"TRENDING",
+    title:"UI & UX Design Using Figma",
+    internship:"5-day Bootcamp",
+    liveTraining:"5+ hours of live training",
+    description:"Learn UI & UX design using Figma, a powerful design tool.",
+    price:"₹199",
+    oldPrice:"₹500",
+    bullets:["Figma Basics","UI/UX Design Principles", "Wireframing & Prototyping"],
+    info:"Includes certificate & project support.",
+    buttonText:"Apply Now",
+    status:"close",
+    registrationEnd:"2026-01-01",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Designing Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
+  {
     tag:"TRENDING & POPULAR",
     title:"Power BI  Analytics",
     internship:"7-day Bootcamp",
@@ -31,7 +51,7 @@ const courseData = [
     info:"Includes certificate & project support.",
     buttonText:"Apply Now",
     status:"close",
-    registrationEnd:"2024-12-05",
+    registrationEnd:"2025-12-05",
     infoDetails:[
       { icon:"fa-location-dot", line1:"Offline", line2:"(NSN Collage Karur)" },
       { icon:"fa-user", line1:"Academy", line2:"Development Team" },
@@ -214,41 +234,108 @@ function escapeHtml(str){
 /* initial render */
 buildCards();
 
-const modal = document.getElementById("registerModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalClose = document.getElementById("modalClose");
-const form = document.getElementById("registerForm");
-const inputName = document.getElementById("inputName");
-const inputEmail = document.getElementById("inputEmail");
-const inputPhone = document.getElementById("inputPhone");
+function openPopup(titleText) {
+  const popup = document.getElementById("applicationPopup");
+  const title = document.getElementById("popupTitle");
+  const subtitle = document.getElementById("popupSubtitle");
 
-function openModal(title){
-  modalTitle.textContent = title;
-  modal.classList.add("active");
-  modal.setAttribute("aria-hidden","false");
+  title.textContent = `${titleText} Application`;
+  subtitle.textContent = `Complete the form below to apply for ${titleText}.`;
+
+  // populate hidden title field
+  const bootcampFormTitle = document.getElementById('bootcampFormTitle');
+  if(bootcampFormTitle) bootcampFormTitle.value = titleText;
+
+  popup.style.display = "flex";
+  popup.style.animation = "fadeIn 0.3s ease-in-out";
 }
-function closeModal(){
-  modal.classList.remove("active");
-  modal.setAttribute("aria-hidden","true");
-  form.reset();
+
+function closePopup() {
+  const popup = document.getElementById("applicationPopup");
+  popup.style.animation = "fadeOut 0.3s ease-in-out";
+  setTimeout(() => {
+    popup.style.display = "none";
+    document.getElementById("applicationForm").reset();
+  }, 300);
 }
+
+// Optional Fade-Out Animation
+const style = document.createElement("style");
+style.textContent = `
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}`;
+document.head.appendChild(style);
+
+function showErrorToast(message){
+  Toastify({
+    text: message,
+    duration: 4000,
+    gravity: "top",
+    position: "right",
+    close: true,
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(135deg, #ff416c, #ff4b2b)",
+      borderRadius: "10px",
+      boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
+      fontWeight: "600"
+    }
+  }).showToast();
+}
+
+function bounceSuccessToast(message){
+  Toastify({
+    text: message,
+    duration: 4500,
+    gravity: "top",
+    position: "right",
+    className: "bounce-toast",
+    close: true,
+    stopOnFocus: true
+  }).showToast();
+}
+
+async function handleBootcampSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  const bootcampName = document.getElementById("popupTitle")?.textContent.replace(" Application","") || "";
+
+  const data = new FormData(form);
+  const json = Object.fromEntries(data.entries());
+  // ensure programType/title exist (hidden inputs provided in HTML)
+  if(!json.programType) json.programType = "bootcamp";
+  if(!json.title) json.title = bootcampName;
+
+  try{
+    const res = await fetch("/event/apply",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(json)
+    });
+    const result = await res.json();
+    if(result && result.success){
+      bounceSuccessToast("🎉 Application submitted successfully! Our team will contact you soon.");
+      form.reset();
+      closePopup();
+    } else {
+      showErrorToast("❌ Application failed. Please try again.");
+    }
+  }catch(err){
+    console.error("Error:", err);
+    showErrorToast("❌ Error submitting application. Please try again.");
+  }
+}
+
 function attachHandlers(){
   document.querySelectorAll(".card .btn:not(.disabled)").forEach(btn=>{
     btn.addEventListener("click",()=>{
       const t = btn.getAttribute("data-title") || btn.closest(".card").querySelector(".title").textContent;
-      openModal(t);
+      openPopup(t);
     });
   });
 }
 attachHandlers();
 
-modalClose.addEventListener("click", closeModal);
-modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-form.addEventListener("submit", (e)=>{
-  e.preventDefault();
-  const name = inputName.value.trim();
-  const email = inputEmail.value.trim();
-  const phone = inputPhone.value.trim();
-  if(!name || !email || !phone) return;
-  closeModal();
-});
+// Form is handled via onsubmit attribute in HTML: onsubmit="handleBootcampSubmit(event)"

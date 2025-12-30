@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/navbar.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/toast.css">
+  <!-- react toastify  -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <!-- Icons -->
@@ -73,10 +78,10 @@
     <div class="contact-form">
       <h2>Send Us a Message</h2>
       <form id="contactForm">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email Address" required>
-        <input type="tel" id="phone" placeholder="Phone Number (optional)">
-        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" id="name" name="name" placeholder="Full Name" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number (optional)">
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
@@ -173,6 +178,7 @@
   </footer>
 
   <script src="../js/navbar.js"></script>
+  <script src="./script.js"></script>
 
 </body>
 </html>
