@@ -8,6 +8,7 @@ const eventRouter = require("./router/event")
 const applyRouter = require("./router/apply")
 const contactRouter = require("./router/contact")
 require("dotenv").config()
+const PORT = process.env.PORT || 4000;
 
 const app = express()
 
@@ -79,6 +80,6 @@ app.get('/pdfs/:filename', (req, res) => {
 });
 
 // ============ START SERVER ============
-app.listen(4000, ()=>{
-  console.log("server is running on http://localhost:4000")
-})
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
