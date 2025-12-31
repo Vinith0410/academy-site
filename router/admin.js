@@ -2,11 +2,14 @@ const express = require("express")
 const bcryptjs = require("bcryptjs")
 const User = require("../models/User")
 const router = express.Router()
+const path = require("path")
 
 // Login form
 router.get('/loginform', (req, res) => {
-  const path = require("path")
   res.sendFile(path.join(__dirname, "../public/admin/auth/login.html"))
+})
+router.get('/registerform', (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/admin/auth/register.html"))
 })
 
 // Admin login
@@ -40,16 +43,51 @@ router.post("/auth/login", async (req, res) => {
   }
 })
 
-// Admin logout
-router.get("/auth/logout", (req, res) => {
-  req.session.destroy()
+// Admin register
+router.post("/auth/register", async (req, res) => {
+  const { name, email, password } = req.body
+  const user = await User.findOne({ email })
+  if (user) {
+    return res.send(`
+      <script>
+        alert("User already exists")
+        window.location.href = "/admin/registerform"
+      </script>
+    `)
+  }
+  const hashedPassword = await bcryptjs.hash(password, 10)
+  const newUser = new User({ name, email, password: hashedPassword })
+  await newUser.save()
   res.send(`
     <script>
-      alert("Logout successful")
-      window.location.href = "/"
+      alert("Registration successful")
+      window.location.href = "/admin/loginform"
     </script>
   `)
 })
+
+router.get("/auth/logout", (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      return res.send(`
+        <script>
+          alert("Logout failed")
+          window.location.href = "/admin/courses"
+        </script>
+      `)
+    }
+
+    res.clearCookie("connect.sid") // optional but recommended
+
+    res.send(`
+      <script>
+        alert("Logged out successfully")
+        window.location.href = "/admin/loginform"
+      </script>
+    `)
+  })
+})
+
 
 // Serve admin pages
 router.get("/courses", (req, res) => {
@@ -58,7 +96,7 @@ router.get("/courses", (req, res) => {
     return res.send(`
       <script>
         alert("Please login first")
-        window.location.href = "/"
+        window.location.href = "/admin/loginform"
       </script>
     `)
   }
@@ -66,7 +104,6 @@ router.get("/courses", (req, res) => {
 })
 
 router.get("/courses/add", (req, res) => {
-  const path = require("path")
   if (!req.session.userid) {
     return res.send(`
       <script>

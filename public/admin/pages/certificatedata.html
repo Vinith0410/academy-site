@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Certificate Details</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: #222;
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 100%;
+      padding: 32px;
+      box-shadow: 0 12px 45px rgba(0,0,0,0.25);
+      position: relative;
+    }
+
+    .header {
+      text-align: center;
+      border-bottom: 3px solid #2ecc71;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    #genderIcon {
+      font-size: 44px;
+      margin-bottom: 6px;
+    }
+
+    .header h1 {
+      margin: 0;
+      color: #27ae60;
+    }
+
+    .rows {
+      margin-top: 20px;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      background: #eafaf1;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .label {
+      width: 220px;
+      font-weight: 700;
+      color: #145a32;
+    }
+
+    .value {
+      flex: 1;
+      color: #1e8449;
+    }
+
+    .qr {
+      text-align: center;
+      margin-top: 20px;
+      background: #eafaf1;
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .qr img {
+      max-width: 260px;
+      margin-top: 10px;
+    }
+    .logo-image{
+      position:absolute;
+      top:20px;
+      right:20px;
+      width:200px;
+      display: none;
+      z-index:10;
+    }
+    .footer {
+      text-align: center;
+      color: #2c3e50;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    .error {
+      color: #b71c1c;
+      text-align: center;
+      font-weight: bold;
+    }
+    button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #27ae60;
+  color: #fff;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1e8449;
+}
+
+
+    @media (max-width: 600px) {
+      .label {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+              <!-- Download-only Logo -->
+      <img id="downloadLogo" src="../../home/image/bright-future-logo.png" alt="Academy Logo" class="logo-image" >
+      <div class="header">
+        <div id="genderIcon"></div>
+        <h1>🎓 Certificate of Completion</h1>
+        <p>Bright Future Academy</p>
+      </div>
+
+      <div id="content">
+        <p style="text-align:center; color:#555;">Loading certificate data…</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+     let CERT_STUDENT_NAME = ""
+    async function fetchData(id) {
+      try {
+        const res = await fetch(`/Certificate/data/${id}`)
+        if (!res.ok) throw new Error("Certificate not found")
+        const certificate = await res.json()
+        render(certificate)
+      } catch (err) {
+        document.getElementById("content").innerHTML =
+          `<p class="error">${err.message}</p>`
+      }
+    }
+function render(certificate) {
+  const content = document.getElementById("content")
+  const issuedDate = new Date(certificate.submittedAt).toLocaleDateString()
+  CERT_STUDENT_NAME = certificate.name
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+
+  // Gender icon
+  const genderIcon = document.getElementById("genderIcon")
+  genderIcon.innerHTML =
+    certificate.gender === "female" ? "👩‍🎓" : "👨‍🎓"
+
+  // First inject HTML
+  content.innerHTML = `
+    <div class="rows">
+      <div class="row"><div class="label">Certificate ID:</div><div class="value">${certificate.certificateId}</div></div>
+      <div class="row"><div class="label">Student Name:</div><div class="value">${certificate.name}</div></div>
+      <div class="row"><div class="label">Student ID:</div><div class="value">${certificate.studentid}</div></div>
+      <div class="row"><div class="label">Batch:</div><div class="value">${certificate.batch}</div></div>
+      <div class="row"><div class="label">Course:</div><div class="value">${certificate.course}</div></div>
+      <div class="row"><div class="label">Course Type:</div><div class="value">${certificate.coursetype}</div></div>
+      <div class="row"><div class="label">Duration:</div><div class="value">${certificate.startingtime} to ${certificate.endingtime}</div></div>
+      <div class="row"><div class="label">About Student:</div><div class="value">${certificate.aboutstudents}</div></div>
+      <div class="row"><div class="label">About Course:</div><div class="value">${certificate.aboutcourse}</div></div>
+
+      ${
+        certificate.additionalinformation
+          ? `<div class="row"><div class="label">Additional Info:</div><div class="value">${certificate.additionalinformation}</div></div>`
+          : ""
+      }
+    </div>
+
+    <div class="qr">
+      <h3>QR Code</h3>
+      <p>Scan to verify this certificate</p>
+      <img id="qrImage" alt="QR Code">
+
+      <div  id="downloadButtons" style="margin-top:15px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <button onclick="downloadQR()">Download QR</button>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Issued on: ${issuedDate}</p>
+      <p>This certificate is generated and verified by Bright Future Academy</p>
+    </div>
+  `
+
+  // ✅ NOW qrImage exists → safe to set src
+  const qrImg = document.getElementById("qrImage")
+  qrImg.src = `/uploads/qrcode/${certificate._id}.png`
+}
+
+
+    // Get certificate ID from URL → /Certificate/details/:id
+    (function () {
+      const parts = window.location.pathname.split("/")
+      const id = parts.pop() || parts.pop()
+      if (!id) {
+        document.getElementById("content").innerHTML =
+          '<p class="error">Invalid certificate URL</p>'
+        return
+      }
+      fetchData(id)
+    })()
+
+    // Fetch the image and convert to blob
+function downloadQR() {
+  const qrImage = document.getElementById("qrImage")
+
+  fetch(qrImage.src)
+    .then(res => res.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement("a")
+
+      link.href = url
+      link.download = `cert-${CERT_STUDENT_NAME}-qr.png`
+
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    })
+      .catch(error => {
+        console.error("Error downloading QR:", error)
+        alert("Failed to download QR code")
+      })
+  }
+
+function downloadCertificate() {
+  const card = document.querySelector(".card")
+  const buttons = document.getElementById("downloadButtons")
+  const logo = document.getElementById("downloadLogo")
+
+  // Show logo, hide buttons
+  buttons.style.display = "none"
+  logo.style.display = "block"
+
+  html2canvas(card, {
+    scale: 2,
+    useCORS: true,
+    backgroundColor: "#ffffff"
+  }).then(canvas => {
+    const link = document.createElement("a")
+    link.download = `cert-${CERT_STUDENT_NAME}.png`
+    link.href = canvas.toDataURL("image/png")
+    link.click()
+
+    // Restore UI
+    buttons.style.display = "flex"
+    logo.style.display = "none"
+  }).catch(err => {
+    console.error(err)
+    buttons.style.display = "flex"
+    logo.style.display = "none"
+    alert("Failed to download certificate")
+  })
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Body */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* Form Container */
+.certificate-form {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Form */
+.certificate-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Labels */
+.certificate-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #eaeaea;
+}
+
+/* Inputs, Select, Textarea */
+.certificate-form input,
+.certificate-form select,
+.certificate-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+}
+
+/* Textarea */
+.certificate-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Focus Effect */
+.certificate-form input:focus,
+.certificate-form select:focus,
+.certificate-form textarea:focus {
+  box-shadow: 0 0 0 2px #00e676;
+}
+
+/* Button */
+.certificate-form button {
+  margin-top: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #0a0a0a;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Button Hover */
+.certificate-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  .certificate-form {
+    padding: 20px;
+  }
+
+  .certificate-form button {
+    font-size: 15px;
+  }
+}

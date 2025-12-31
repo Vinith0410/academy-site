@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Certificate</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .certificate-form {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 30px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .certificate-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .certificate-form label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #eaeaea;
+    }
+
+    .certificate-form input,
+    .certificate-form select,
+    .certificate-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+    }
+
+    .certificate-form textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .certificate-form input:focus,
+    .certificate-form select:focus,
+    .certificate-form textarea:focus {
+      box-shadow: 0 0 0 2px #00e676;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .certificate-form button {
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      flex: 1;
+    }
+
+    .btn-update {
+      background: linear-gradient(135deg, #00e676, #00c853);
+      color: #0a0a0a;
+    }
+
+    .btn-update:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+    }
+
+    .btn-cancel {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+      color: white;
+    }
+
+    .btn-cancel:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(238, 90, 82, 0.4);
+    }
+
+    .loading {
+      display: none;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .loading.active {
+      display: block;
+    }
+
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .success-message {
+      display: none;
+      padding: 15px;
+      margin: 20px 0;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      border-radius: 4px;
+      color: #155724;
+    }
+
+    .success-message.active {
+      display: block;
+    }
+
+    .error-message {
+      display: none;
+      padding: 15px;
+      margin: 20px 0;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      border-radius: 4px;
+      color: #721c24;
+    }
+
+    .error-message.active {
+      display: block;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    /* Success Modal */
+    .success-modal {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease-out;
+    }
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .success-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #00e676, #00c853);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      font-size: 40px;
+      color: white;
+    }
+
+    .success-modal h3 {
+      text-align: center;
+      color: #333;
+      margin: 20px 0;
+      font-size: 24px;
+    }
+
+    .success-modal p {
+      text-align: center;
+      color: #666;
+      margin: 15px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+      justify-content: center;
+    }
+
+    .btn-modal {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1;
+    }
+
+    .btn-continue {
+      background: linear-gradient(135deg, #00e676, #00c853);
+      color: white;
+    }
+
+    .btn-continue:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 22px;
+      }
+
+      .certificate-form {
+        padding: 20px;
+      }
+
+      .certificate-form button {
+        font-size: 15px;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Modal Overlay for Success Message -->
+  <div class="modal-overlay" id="successModal">
+    <div class="success-modal">
+      <div class="success-icon">✓</div>
+      <h3>Certificate Updated!</h3>
+      <p>Your certificate has been successfully updated and saved to the database.</p>
+
+      <div class="modal-buttons">
+        <button class="btn-modal btn-continue" onclick="goToList()">Back to List</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="certificate-form">
+    <h2>Edit Certificate</h2>
+
+    <div class="success-message" id="successMessage"></div>
+    <div class="error-message" id="errorMessage"></div>
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Updating certificate...</p>
+    </div>
+
+    <form id="editForm">
+      <label for="studentid">Student ID:</label>
+      <input type="text" id="studentid" name="studentid" required>
+
+      <label for="batch">Batch:</label>
+      <input type="text" id="batch" name="batch" required>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="course">Course:</label>
+      <input type="text" id="course" name="course" required>
+
+      <label for="coursetype">Course Type:</label>
+      <select id="coursetype" name="coursetype" required>
+        <option value="">Select Course Type</option>
+        <option value="course">Course</option>
+        <option value="bootcamp">Bootcamp</option>
+        <option value="special-event">Special event</option>
+      </select>
+
+      <label for="startingtime">Starting Time:</label>
+      <input type="date" id="startingtime" name="startingtime" required>
+
+      <label for="endingtime">Ending Time:</label>
+      <input type="date" id="endingtime" name="endingtime" required>
+
+      <label for="aboutstudents">About Students:</label>
+      <textarea id="aboutstudents" name="aboutstudents" required></textarea>
+
+      <label for="aboutcourse">About Course:</label>
+      <textarea id="aboutcourse" name="aboutcourse" required></textarea>
+
+      <label for="additionalinformation">Additional Information:</label>
+      <textarea id="additionalinformation" name="additionalinformation"></textarea>
+
+      <div class="button-group">
+        <button type="submit" class="btn-update">Update Certificate</button>
+        <button type="button" class="btn-cancel" onclick="goBack()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    let certificateId = null;
+
+    async function loadCertificate() {
+      try {
+        const parts = window.location.pathname.split('/')
+        certificateId = parts.pop() || parts.pop()
+
+        if (!certificateId) {
+          document.getElementById('errorMessage').textContent = 'Invalid certificate ID'
+          document.getElementById('errorMessage').classList.add('active')
+          return
+        }
+
+        const response = await fetch(`/Certificate/data/${certificateId}`)
+        if (!response.ok) throw new Error('Certificate not found')
+
+        const certificate = await response.json()
+        populateForm(certificate)
+      } catch (error) {
+        document.getElementById('errorMessage').textContent = `Error: ${error.message}`
+        document.getElementById('errorMessage').classList.add('active')
+      }
+    }
+
+    function populateForm(certificate) {
+      document.getElementById('studentid').value = certificate.studentid
+      document.getElementById('batch').value = certificate.batch
+      document.getElementById('name').value = certificate.name
+      document.getElementById('gender').value = certificate.gender
+      document.getElementById('course').value = certificate.course
+      document.getElementById('coursetype').value = certificate.coursetype
+      document.getElementById('startingtime').value = certificate.startingtime
+      document.getElementById('endingtime').value = certificate.endingtime
+      document.getElementById('aboutstudents').value = certificate.aboutstudents
+      document.getElementById('aboutcourse').value = certificate.aboutcourse
+      document.getElementById('additionalinformation').value = certificate.additionalinformation || ''
+    }
+
+    document.getElementById('editForm').addEventListener('submit', async (e) => {
+      e.preventDefault()
+
+      const formData = new FormData(document.getElementById('editForm'))
+      const data = Object.fromEntries(formData)
+
+      document.getElementById('loading').classList.add('active')
+      document.getElementById('successMessage').classList.remove('active')
+      document.getElementById('errorMessage').classList.remove('active')
+
+      try {
+        const response = await fetch(`/Certificate/update/${certificateId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        })
+
+        const result = await response.json()
+
+        if (result.success) {
+          // Show success modal instead of redirect immediately
+          document.getElementById('loading').classList.remove('active')
+          document.getElementById('successModal').classList.add('active')
+        } else {
+          document.getElementById('errorMessage').textContent = `✗ Error: ${result.message}`
+          document.getElementById('errorMessage').classList.add('active')
+          document.getElementById('loading').classList.remove('active')
+        }
+      } catch (error) {
+        document.getElementById('errorMessage').textContent = `✗ Error: ${error.message}`
+        document.getElementById('errorMessage').classList.add('active')
+        document.getElementById('loading').classList.remove('active')
+      }
+    })
+
+    function goToList() {
+      window.location.href = '/Certificate/read-certificates'
+    }
+
+    function goBack() {
+      window.location.href = '/Certificate/read-certificates'
+    }
+
+    document.addEventListener('DOMContentLoaded', loadCertificate)
+  </script>
+
+</body>
+</html>
