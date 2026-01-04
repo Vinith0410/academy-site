@@ -1,14 +1,74 @@
 const courseData = [
+   {
+    tag:"TRENDING",
+    title:"MERN Stack Development",
+    internship:"90-days Classes",
+    liveTraining:"100+ hours hours of live training",
+    description:"Daily practical builds & deployments",
+    price:"₹10,000",
+    oldPrice:"₹12,999",
+    bullets:["Frontend & Backend","Database & Deployment"],
+    info:"Includes project reviews, certificate, interview guidance and resume building.",
+    buttonText:"Apply",
+    status:"open",
+    registrationEnd:"2026-01-18",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
+   {
+    tag:"TRENDING",
+    title:"Data Analytics",
+    internship:"60-days Classes",
+    liveTraining:"70+ hours hours of live training",
+    description:"Hands-on data analysis with real-world datasets",
+    price:"₹7,500",
+    oldPrice:"₹10,000",
+    bullets:["Excel Power BI & Jupter","Python for data analysis & science"],
+    info:"Includes project reviews, certificate, interview guidance and resume building.",
+    buttonText:"Apply",
+    status:"open",
+    registrationEnd:"2026-01-18",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Data Analysis" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
   {
+    tag:"TRENDING",
+    title:"MERN Stack Development",
+    internship:"90-days Classes",
+    liveTraining:"100+ hours hours of live training",
+    description:"Daily practical builds & deployments",
+    price:"₹10,000",
+    oldPrice:"₹12,999",
+    bullets:["Frontend & Backend","Database & Deployment"],
+    info:"Includes project reviews, certificate, interview guidance and resume building.",
+    buttonText:"Apply",
+    status:"open",
+    registrationEnd:"2025-11-30",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
+    {
     tag:"MOST POPULAR",
     title:"Full Stack Development",
-    internship:"10-day internship",
-    liveTraining:"20+ hours of live training",
+    internship:"90-days Classes",
+    liveTraining:"100+ hours of live training",
     description:"Daily practical builds & deployments",
-    price:"₹3,499",
-    oldPrice:"₹4,999",
-    bullets:["React + Node.js delivery","Cloud deployment lab"],
-    info:"Includes project reviews, certificate, and loyalty discount.",
+    price:"₹8,000",
+    oldPrice:"₹10,000",
+    bullets:["Frontend & Backend","Database & Deployment"],
+    info:"Includes project reviews, certificate, interview guidance and resume building.",
     buttonText:"Apply Now",
     status:"open",
     registrationEnd:"2025-12-05",
@@ -19,106 +79,7 @@ const courseData = [
       { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
     ]
   },
-  {
-    tag:"HOT",
-    title:"AI / ML Internship",
-    internship:"15-day internship",
-    liveTraining:"25+ hours live",
-    description:"Model building, datasets & training",
-    price:"₹4,999",
-    oldPrice:"₹6,499",
-    bullets:["Python + ML algorithms","Dataset processing"],
-    info:"Includes certificate & project support.",
-    buttonText:"Enroll",
-    status:"close",
-    registrationEnd:"2025-10-01",
-    infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
-      { icon:"fa-user", line1:"Academy", line2:"" },
-      { icon:"fa-microphone", line1:"Hands-on", line2:"Dataset Workshops" },
-      { icon:"fa-book", line1:"Project", line2:"Model Building" }
-    ]
-  },
-  {
-    tag:"TOP",
-    title:"Cloud DevOps",
-    internship:"7-day internship",
-    liveTraining:"15+ hours AWS",
-    description:"CI/CD pipeline & docker labs",
-    price:"₹2,999",
-    oldPrice:"₹3,999",
-    bullets:["Docker + Kubernetes","AWS deployments"],
-    info:"Project + certification included",
-    buttonText:"Apply",
-    status:"open",
-    registrationEnd:"2025-11-30",
-    infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"AWS Labs" },
-      { icon:"fa-user", line1:"S. Mohan", line2:"Cloud Trainer" },
-      { icon:"fa-microphone", line1:"Live Labs", line2:"CI/CD Sessions" },
-      { icon:"fa-book", line1:"Hands-on", line2:"Deployment Exercises" }
-    ]
-  },
-  {
-    tag:"TRENDING",
-    title:"Cyber Security",
-    internship:"12-day internship",
-    liveTraining:"30+ hours",
-    description:"Ethical hacking + network labs",
-    price:"₹4,499",
-    oldPrice:"₹5,499",
-    bullets:["Pentesting labs","Network analysis"],
-    info:"Certificate + real tools",
-    buttonText:"Register",
-    status:"close",
-    registrationEnd:"2025-09-15",
-    infoDetails:[
-      { icon:"fa-location-dot", line1:"Onsite", line2:"(Lab-Based)" },
-      { icon:"fa-user", line1:"A. Srinivasan", line2:"Ethical Hacker" },
-      { icon:"fa-microphone", line1:"Tool-based", line2:"Real Tools" },
-      { icon:"fa-book", line1:"Labs", line2:"CTFs & Pentests" }
-    ]
-  },
-  {
-    tag:"NEW",
-    title:"UI/UX Design",
-    internship:"5-day internship",
-    liveTraining:"10+ hours",
-    description:"Figma workshop",
-    price:"₹1,999",
-    oldPrice:"₹2,499",
-    bullets:["Wireframing","Visual design"],
-    info:"Certificate included",
-    buttonText:"Register",
-    status:"open",
-    registrationEnd:"2026-01-10",
-    infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"Figma Labs" },
-      { icon:"fa-user", line1:"M. Leela", line2:"Design Mentor" },
-      { icon:"fa-microphone", line1:"Workshops", line2:"Figma + UX" },
-      { icon:"fa-book", line1:"Portfolio", line2:"Project Kit" }
-    ]
-  },
-  {
-    tag:"HOT",
-    title:"Android Development",
-    internship:"10-day internship",
-    liveTraining:"18+ hours",
-    description:"Kotlin + Jetpack",
-    price:"₹3,299",
-    oldPrice:"₹4,199",
-    bullets:["UI components","API integration"],
-    info:"Certificate + project",
-    buttonText:"Apply",
-    status:"close",
-    registrationEnd:"2025-11-01",
-    infoDetails:[
-      { icon:"fa-location-dot", line1:"Online", line2:"Hands-on" },
-      { icon:"fa-user", line1:"R. Kumar", line2:"Android Coach" },
-      { icon:"fa-microphone", line1:"Live Labs", line2:"App Building" },
-      { icon:"fa-book", line1:"Project", line2:"Publishable App" }
-    ]
-  }
+
 ];
 
 /* Utilities */
@@ -316,6 +277,8 @@ function closePopup() {
   setTimeout(() => {
     popup.style.display = "none";
     document.getElementById("applicationForm").reset();
+    // Clean up URL by removing query parameters
+    window.history.replaceState({}, '', window.location.pathname);
   }, 300);
 }
 
@@ -333,7 +296,29 @@ function attachHandlers(){
     btn.addEventListener("click",()=>{
       const t = btn.getAttribute("data-title") || btn.closest(".card").querySelector(".title").textContent;
       openPopup(t);
+      // Update URL with event parameter
+      window.history.pushState({ event: t }, '', `?event=${encodeURIComponent(t)}`);
     });
   });
 }
 attachHandlers();
+
+// Check URL parameters on page load and open popup if event parameter exists
+function checkAndOpenEventFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const eventName = params.get('event');
+  if (eventName) {
+    // Wait for cards to be built
+    const checkInterval = setInterval(() => {
+      const eventCard = Array.from(document.querySelectorAll(".card .title")).find(el => el.textContent === eventName);
+      if (eventCard) {
+        clearInterval(checkInterval);
+        openPopup(eventName);
+      }
+    }, 100);
+    // Timeout after 5 seconds
+    setTimeout(() => clearInterval(checkInterval), 5000);
+  }
+}
+
+window.addEventListener('load', checkAndOpenEventFromURL);

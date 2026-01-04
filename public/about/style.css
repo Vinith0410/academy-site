@@ -48,9 +48,10 @@
 
   .site-header{
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('./images/main.jpg') center/cover no-repeat;
+    url('./images/team_disc.webp') center/cover no-repeat;
     margin-top: 50px;
-  }
+    height: 500px;
+  } 
 
   /* =========================
        1) WHY US (improved layout) — 40% / 60% split
@@ -62,7 +63,7 @@
     gap: 36px;
     align-items: stretch;
     /* both columns equal height */
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     background: transparent;
     padding: 6px 0;
   }

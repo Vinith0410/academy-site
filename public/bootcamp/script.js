@@ -256,6 +256,8 @@ function closePopup() {
   setTimeout(() => {
     popup.style.display = "none";
     document.getElementById("applicationForm").reset();
+    // Clean up URL by removing query parameters
+    window.history.replaceState({}, '', window.location.pathname);
   }, 300);
 }
 
@@ -333,9 +335,31 @@ function attachHandlers(){
     btn.addEventListener("click",()=>{
       const t = btn.getAttribute("data-title") || btn.closest(".card").querySelector(".title").textContent;
       openPopup(t);
+      // Update URL with bootcamp parameter
+      window.history.pushState({ bootcamp: t }, '', `?bootcamp=${encodeURIComponent(t)}`);
     });
   });
 }
 attachHandlers();
+
+// Check URL parameters on page load and open popup if bootcamp parameter exists
+function checkAndOpenBootcampFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const bootcampName = params.get('bootcamp');
+  if (bootcampName) {
+    // Wait for cards to be built
+    const checkInterval = setInterval(() => {
+      const bootcampCard = Array.from(document.querySelectorAll(".card .title")).find(el => el.textContent === bootcampName);
+      if (bootcampCard) {
+        clearInterval(checkInterval);
+        openPopup(bootcampName);
+      }
+    }, 100);
+    // Timeout after 5 seconds
+    setTimeout(() => clearInterval(checkInterval), 5000);
+  }
+}
+
+window.addEventListener('load', checkAndOpenBootcampFromURL);
 
 // Form is handled via onsubmit attribute in HTML: onsubmit="handleBootcampSubmit(event)"

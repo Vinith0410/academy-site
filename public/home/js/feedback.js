@@ -19,21 +19,6 @@
         "rating": 5
       },
       {
-        "name": "Deepa",
-        "course": "MERN Stack Development",
-        "role": "student",
-        "company": "NSN collage of Engineering & Technology",
-        "feedback": `
-         I’ve completed the MERN Stack Development course at Bright Future Academy, and I truly enjoyed the entire learning
-          journey. I learned Frontend backend database and deployment, and I’m really grateful for the way you taught everything.
-         Your explanations were always clear, and you made even difficult topics easy to understand. I really appreciate
-          how patiently you cleared all my doubts and how you always supported us with extra lessons whenever needed.
-         Thank you for making the classes enjoyable and for giving us such a good learning experience.
-         I genuinely had a great time learning from you. 🙏😊
-        `,
-        "rating": 5
-      },
-      {
         "name": "Jansivijila",
         "course": "MERN Stack Development",
         "role": "student",
@@ -47,11 +32,27 @@
         `,
         "rating": 5
       },
+       {
+        "name": "Deepa",
+        "course": "UI UX Design",
+        "role": "student",
+        "institution": "NSN collage of Engineering & Technology",
+        "feedback": `
+        I wanted to share my feedback for the one-week Figma live session. This session helped us so much  every doubt was
+        cleared immediately, and the learning felt very easy and comfortable. At first, when the course was announced,
+        no one was really interested. But by the end of the week, everyone genuinely wished the sessions could continue
+         because we enjoyed them so much.
+        We learned sketching, Figma basics, and many useful concepts in a fun and engaging way. It was a joyful and
+        meaningful learning experience for all of us.
+        Thank you so much, anna, for your effort and guidance. We are truly grateful.
+        `,
+        "rating": 5
+      },
       {
         "name": "Deepika",
         "course": "Full Stack Development",
         "role": "student",
-        "company": "NSN collage of Engineering & Technology",
+        "institution": "NSN collage of Engineering & Technology",
         "feedback":`
         Your teaching method is totally different because you both only provide the practical activities to
         improve our skills.Your 10 days fullstack development course is clearly understood to me.And it is very useful
@@ -71,6 +72,20 @@
           teaching style.you explained complex concepts clearly and made the learning enjoyable.The course was very
           organised with an clear progress of topics which made learning more interactive and enjoyable I feel much
           more confidence in my abilities now thanks to you 😊
+        `,
+        "rating": 5
+      }, {
+        "name": "Jansivijila",
+        "course": "PHP Development",
+        "role": "student",
+        "institution": "NSN collage of Engineering & Technology",
+        "feedback": `
+        PHP was used to create a website, especially on the server side. Basically, everyone said that PHP was very
+         difficult to learn, but you taught this topic in an easy way, and we easily understood the concept.
+         We can now develop server-side applications easily; you were very helpful during our development time.
+          You cleared our doubts again and again and wanted to clear our doubts until the concept was understood.
+           Your teaching way was very nice; continue this way. Your teaching was helpful for all PHP developers.
+           Thank you for this opportunity to learn the PHP.
         `,
         "rating": 5
       }

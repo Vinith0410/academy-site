@@ -25,8 +25,9 @@
  }
 .site-header{
   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('./images/main.jpg') center/cover no-repeat;
+    url('./images/3784896.jpg') center/cover no-repeat;
     margin-top: 50px;
+    height: 500px;
 }
  /* HOW WE TEACH SECTION */
 .how-we-teach {

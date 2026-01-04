@@ -11,8 +11,9 @@
     }
     .site-header {
        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url('./images/main.jpg') center/cover no-repeat;
+    url('./images/31149830_7773612.jpg') center/cover no-repeat;
     margin-top: 50px;
+    height: 500px;
     }
     .header-ctas{
       margin-top: 10px;

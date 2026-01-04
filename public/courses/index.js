@@ -15,8 +15,24 @@ async function fetchCourses() {
 }
 fetchCourses()
 const coursePDFs = {
-  "Full Stack Web Development": "./pdfs/Bright-Future-Academy-Full stack development Course Schedule.pdf",
-  "Python for Data Science": "./pdfs/Bright-Future-Academy-Python for Data Science Course Schedule.pdf"
+  "MERN Stack Development": "./pdfs/Bright-Future-Academy-MERN stack development Course Schedule.pdf",
+  "Python Web Development":"./pdfs/Bright-Future-Academy-Python Web Development Course Schedule.pdf",
+  "Data Analytics":"./pdfs/Bright-Future-Academy-Data Analytics Course Schedule.pdf",
+  "UI & UX Design":"./pdfs/Bright-Future-Academy-UI-UX Design Course Schedule.pdf",
+  "Power BI":"./pdfs/Bright-Future-Academy- PowerBI Course Schedule.pdf",
+  "Figma UI UX Design":"./pdfs/Bright-Future-Academy-Figma Course Schedule.pdf",
+  "React JS Development":"./pdfs/Bright-Future-Academy-React JS Course Schedule.pdf",
+  "Frontend Development":"./pdfs/Bright-Future-Academy-Frontend Course Schedule.pdf",
+  "Backend Development":"./pdfs/Bright-Future-Academy-Backend Course Schedule.pdf",
+  "Excel & MS Word":"./pdfs/Bright-Future-Academy-Excel MS-Word Course Schedule.pdf",
+  "Python for Data Science": "./pdfs/Bright-Future-Academy-Python for Data Science Course Schedule.pdf",
+  "Python Programming Language":"./pdfs/Bright-Future-Academy-Python Programming Course Schedule.pdf",
+  "Python for Data Analytics":"./pdfs/Bright-Future-Academy-Python for Data Analytics Course Schedule.pdf",
+  "Python for Data Science":"./pdfs/Bright-Future-Academy-Python for Data Science Course Schedule.pdf",
+  "C Programming Language":"./pdfs/Bright-Future-Academy-C Programming Course Schedule.pdf",
+  "Database Management with SQL & MongoDB":"./pdfs/Bright-Future-Academy-MySQL&MongoDB Course Schedule.pdf",
+  "Word Excel & Power Point":"./pdfs/Bright-Future-Academy-Word , Excel & PowerPoint Course Schedule.pdf",
+  "PHP Development":"./pdfs/Bright-Future-Academy-PHP Development Course Schedule.pdf",
 };
 
 function openPopup(courseName) {
@@ -61,6 +77,8 @@ function closePopup() {
   const popup = document.getElementById("applicationPopup");
   popup.style.animation = "fadeOut 0.3s ease-in-out";
   setTimeout(() => (popup.style.display = "none"), 300);
+  // Clean up URL by removing query parameters
+  window.history.replaceState({}, '', window.location.pathname);
 }
 
 // Optional Fade-Out Animation
@@ -73,12 +91,39 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Example trigger (replace this with your "Enroll" button)
-document.querySelectorAll(".enroll-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const courseName = btn.getAttribute("data-course") || "Your Course";
-    openPopup(courseName);
-  });
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("enroll-btn")) {
+    const card = e.target.closest(".course-card");
+    if (card) {
+      const courseName = card.querySelector(".course-title")?.textContent || "Your Course";
+      openPopup(courseName);
+      // Update URL with course parameter
+      window.history.pushState({ course: courseName }, '', `?course=${encodeURIComponent(courseName)}`);
+    }
+  }
 });
+
+// Check URL parameters on page load and open popup if course parameter exists
+function checkAndOpenFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const courseName = params.get('course');
+  if (courseName) {
+    // Wait for courses to load, then open popup
+    const checkInterval = setInterval(() => {
+      if (courses && courses.length > 0) {
+        clearInterval(checkInterval);
+        const courseExists = courses.find(c => c.name === courseName);
+        if (courseExists) {
+          openPopup(courseName);
+        }
+      }
+    }, 100);
+    // Timeout after 5 seconds
+    setTimeout(() => clearInterval(checkInterval), 5000);
+  }
+}
+
+window.addEventListener('load', checkAndOpenFromURL);
 
     const grid=document.getElementById('cardsGrid');
    const searchInput = document.getElementById('searchInput');

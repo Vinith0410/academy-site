@@ -17,8 +17,9 @@
   }
   .site-header{
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-     url('./image/main.jpg') center/cover no-repeat;
+     url('./image/event.jpg') center/cover no-repeat;
      margin-top: 50px;
+     height: 500px;
   }
   .event-cards{
     padding: 40px 20px;
@@ -290,11 +291,11 @@
     margin-top: 3px;
   }
 
-    @media(max-width:950px) {
+    /* @media(max-width:950px) {
     .grid {
-      /* grid-template-columns: repeat(2, 1fr); */
+     grid-template-columns: repeat(2, 1fr);
     }
-  }
+  } */
 
   @media(max-width:650px) {
     .grid {

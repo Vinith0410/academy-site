@@ -1,11 +1,12 @@
  [
   {
-    "name": "MERN Stack",
-    "price": 10000,
-    "oldPrice": 12999,
+    "name": "MERN Stack Development",
+    "price": 11499,
+    "oldPrice": 13999,
     "duration": "3 - 4 Months",
-    "img": "./images/fullstack.jpg",
+    "img": "./images/fullstack-course.png",
     "tag": "Beginner to Advanced",
+    "tg": "more info",
     "desc": "Learn frontend, backend, and database with deployment. Build full web apps from scratch, plus get interview and resume guidance.",
     "points": [
       "HTML & CSS",
@@ -21,7 +22,7 @@
     "price": 10000,
     "oldPrice": 12999,
     "duration": "3 - 4 Months",
-    "img": "./images/pythonweb.jpg",
+    "img": "./images/1767514611534.jpg",
     "tag": "Beginner to Advanced",
     "desc": "Learn Python, frontend, backend, and database with development. Build complete web apps from scratch with Django & Flask, plus get interview and resume guidance.",
     "points": [
@@ -38,7 +39,7 @@
     "price": 7500,
     "oldPrice": 10000,
     "duration": "2 - 3 Months",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/data-analysis-courses.jpg",
     "tag": "Beginner to Advanced",
     "desc": "Learn data analytics from scratch with dataset handling, cleaning, pivot tables, charts, visualization, data science & engineering concepts, plus interview and resume guidance.",
     "points": [
@@ -54,7 +55,7 @@
     "price": 5500,
     "oldPrice": 7500,
     "duration": "1 - 2 Months",
-    "img": "./images/uiux.jpg",
+    "img": "./images/ui-ux-coures-image.jpg",
     "tag": "Beginner to Advanced",
     "desc": "Learn UI & UX design from scratch. Create user-friendly interfaces, work with tools like Figma, Wix, and Sketch, build real projects, and get interview and resume guidance.",
     "points": [
@@ -69,7 +70,7 @@
     "price": 3499,
     "oldPrice": 4500,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/power-bi-course.jpg",
     "tag": "Beginner to Advanced",
     "desc": "Master Power BI from basics to advanced. Learn data modeling, dashboard creation, and interactive reporting to turn data into insights.",
     "points": [ "Data Handling", "Data Modeling", "Dashboards", "Reports", "Visualization", "Projects"]
@@ -79,7 +80,7 @@
     "price": 3000,
     "oldPrice": 4000,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/figma-courses.png",
     "tag": "Beginner to Advanced",
     "desc": "Design modern UI layouts from scratch with Figma. Master wireframes, components, and prototypes to create professional designs.",
     "points": ["Wireframes", "Components", "Prototyping", "Interactive" , "Sketch"]
@@ -89,7 +90,7 @@
     "price": 5499,
     "oldPrice": 7500,
     "duration": "1 - 2 Months",
-    "img": "./images/fullstack.jpg",
+    "img": "./images/Reactlogo.png",
     "tag": "Beginner to Advanced",
     "desc": "Master modern frontend development with React. Build fast, dynamic, and scalable web applications with real-world projects, deployment, and interview guidance.",
     "points": [
@@ -105,7 +106,7 @@
     "price": 5499,
     "oldPrice": 7500,
     "duration": "1 - 2 Months",
-    "img": "./images/fullstack.jpg",
+    "img": "./images/frontend-courses.png",
     "tag": "Beginner to Advanced",
     "desc": "Learn frontend development from scratch with full deployment. Build responsive websites, interactive interfaces, and gain interview and resume guidance.",
     "points": [
@@ -120,7 +121,7 @@
     "price": 5499,
     "oldPrice": 7500,
     "duration": "1 - 2 Months",
-    "img": "./images/fullstack.jpg",
+    "img": "./images/backend-course.jpg",
     "tag": "Beginner to Advanced",
     "desc": "Learn backend development with Node.js & Express. Requires basic frontend and database knowledge. Build APIs, deploy projects, and get interview and resume guidance.",
     "points": [
@@ -136,7 +137,7 @@
     "price": 3000,
     "oldPrice": 4000,
     "duration": "20 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/excel-coures.png",
     "tag": "Beginner to Advanced",
     "desc": "Master MS Word for professional documentation and Excel for advanced data analysis. Learn to handle, clean, and visualize data effectively.",
     "points": [ "Documentation",  "Data Handling", "Data Cleaning", "Formulas", "Charts"]
@@ -147,7 +148,7 @@
     "price": 1499,
     "oldPrice": 2000,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/pythoncourse.jpg",
     "tag": "Beginner to intermediate",
     "desc": "Learn Python from scratch. Build strong logic and problem-solving skills — a perfect step into programming.",
     "points": ["Syntax", "Function", "Problem Solving","library", "Algorithms","File Handling", "Project"]
@@ -157,7 +158,7 @@
     "price": 1499,
     "oldPrice": 2000,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/data-analyst.jpg",
     "tag": "Beginner to Advanced",
     "desc": "Learn Python basics and data analysis with Pandas, NumPy, and visualization tools. Explore data science concepts through real projects.",
     "points": ["Python Basics","Pandas", "NumPy", "Visualization", "Projects"]
@@ -167,7 +168,7 @@
     "price": 1499,
     "oldPrice": 2000,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/datascience.png",
     "tag": "Beginner to Intermediate",
     "desc": "Learn core data science concepts using Python, including data preprocessing, machine learning basics, model building, and visualization.",
     "points": ["Python Basics","Data Preprocessing", "Model Building", "Scikit-Learn", "Projects"]
@@ -177,7 +178,7 @@
     "price": 1299,
     "oldPrice": 1999,
     "duration": "15 Days",
-    "img": "./images/uiux.jpg",
+    "img": "./images/c-programming.png",
     "tag": "Beginner to intermediate",
     "desc": "Learn C programming from basics. Build strong logic and problem-solving skills — the perfect start to coding.",
     "points": ["Syntax", "Function", "Problem Solving", "library", "Algorithms","File Handling", "Project"]
@@ -187,7 +188,7 @@
     "price": 2000,
     "oldPrice": 2499,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/databasecourse.jpg",
     "tag": "Beginner to intermediate",
     "desc": "Master SQL & MongoDB to manage, query, and organize databases efficiently. Build real projects and strengthen your database skills.",
     "points": ["CRUD", "Queries", "Joins", "Data Handling", "Projects"]
@@ -197,7 +198,7 @@
     "price": 1499,
     "oldPrice": 2000,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/powerpoint-course.png",
     "tag": "Beginner to intermediate ",
     "desc": "Learn MS Word for documentation, Excel for data entry, and PowerPoint For presentations. Gain hands-on skills for essential office tasks.",
     "points": [
@@ -213,7 +214,7 @@
     "price": 2000,
     "oldPrice": 2500,
     "duration": "15 Days",
-    "img": "./images/dataanalysis.jpg",
+    "img": "./images/php.png",
     "tag": "Beginner to Intermediate",
     "desc": "Learn PHP from scratch and build dynamic web applications. Understand backend logic, work with forms, handle MySQL databases, and gain practical coding experience.",
     "points": [
