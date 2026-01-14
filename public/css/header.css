@@ -159,3 +159,60 @@
         transform: translateY(0);
       }
     }
+
+    #preloader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Container */
+.code-core {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Courier New", monospace;
+}
+
+/* Brackets */
+.bracket {
+  font-size: 90px;
+  font-weight: 700;
+  color: #22c55e;
+  animation: float 1.6s infinite ease-in-out;
+}
+
+/* Inside animation */
+.core {
+  width: 60px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.core span {
+  height: 8px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 4px;
+  animation: compile 1.2s infinite ease-in-out;
+}
+
+.core span:nth-child(2) { animation-delay: .15s; }
+.core span:nth-child(3) { animation-delay: .3s; }
+
+/* Animations */
+@keyframes compile {
+  0%   { transform: scaleX(0.2); opacity: 0.3; }
+  50%  { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(0.2); opacity: 0.3; }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

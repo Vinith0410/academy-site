@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public")))
 
 // session create
 app.use(session({
-  secret:"my-secret",
+  secret:"Bright Future Academy",
   resave:false,
   saveUninitialized:false
 }))
@@ -80,6 +80,18 @@ app.get('/pdfs/:filename', (req, res) => {
     }
   });
 });
+
+
+// serve sitemap
+app.get("/sitemap.xml", (req, res) => {
+  res.setHeader("Content-Type", "application/xml");
+  res.sendFile(path.join(__dirname, "sitemap.xml"));
+});
+
+app.get("/robots.txt", (req, res) => {
+  res.sendFile(path.join(__dirname, "robots.txt"));
+});
+
 
 // ============ START SERVER ============
 app.listen(PORT, "0.0.0.0", () => {

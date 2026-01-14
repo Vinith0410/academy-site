@@ -65,12 +65,31 @@ const sendCourseApplicationEmail = async (fullName, email, title) => {
     await transporter.sendMail({
       from: `"Bright Future Academy" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: "Thank You for Registering – Your Journey Begins 🚀",
+      subject: "Registration Confirmed – Welcome to Bright Future Academy 🚀",
       html: `
-        <p>Dear <strong>${fullName}</strong>,</p>
-        <p>Thank you for registering for <strong>${title}</strong>.</p>
-        <p>Our team will contact you shortly.</p>
+        <p>Dear, <strong>${fullName}</strong>,</p>
+        <p>🎉 Welcome to Bright Future Academy! 🎉 </p>
+        <p>Thank you for successfully registering for the <strong>${title} </strong>course.</p>
+        <p>We are excited to have you on board and look forward to being part of your learning journey.</p>
+        <h3>What happens next?</h3>
+        <ul>
+          <li>Our academic team will review your registration.</li>
+          <li>You will be contacted shortly with further details about classes, schedules, and onboarding.</li>
+          <li>Get ready for hands-on learning, real-world projects, and career-focused training.</li>
+        </ul>
+        <p>If you have any questions in the meantime, feel free to reach out to us anytime.</p>
+        <h4>🚀 Your future starts here — let’s build it together!</h4>
+        <p>Warm regards,</p>
         <p><strong>Bright Future Academy Team</strong></p>
+        <p>📧 brightfutureacad2025@gmail.com</p>
+        <p>🌐 https://brightfutureacad.in</p>
+        <p>📞 +91 90873 15789</p>
+        <p>Follow us on social media:</p>
+        <p>
+          <a href="https://www.instagram.com/brightfutureacad/" target="_blank">Instagram</a> |
+          <a href="https://www.linkedin.com/company/bright-future-academy/" target="_blank">LinkedIn</a> |
+          <a href="https://www.facebook.com/brightfutureacad/" target="_blank">Facebook</a>
+        </p>
       `
     });
   } catch (err) {
@@ -105,7 +124,7 @@ const sendContactConfirmationEmail = async (name, email, message) => {
     await transporter.sendMail({
       from: `"Bright Future Academy" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'We received your message — Bright Future Academy',
+      subject: 'We Received Your Message — Bright Future Academy',
       html: `
         <p>Hi <strong>${name}</strong>,</p>
         <p>Thanks for reaching out to Bright Future Academy. We received your message:</p>
