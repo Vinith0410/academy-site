@@ -1,34 +1,23 @@
  const feedbackData = [
        {
-        "name": "Kowsika",
-        "course": "MERN-Stack Development",
+        "name": "Bhuvaneshwari",
+        "course": "Power BI Analytics",
         "role": "student",
         "institution": "NSN collage of Engineering & Technology",
         "feedback":`
-        MERN Stack online class romba super-ah irundhudhu, and enaku neraya knowledge kidaichudhu.
-        Trainer way of teaching romba clear-ah, simple-ah irundhudhu, so ellame easy-ah purinjiduchu.
-        Also HTML, CSS, JAVA, Bootstrap,MongoDB, Express, React, Node nu oru oru topic-um trainer step by
-        step explain panninadhu nala, naan confident-ah learn panna mudinjadhu. Class recordings irundhadhu
-        nala eppo venalum revise pannalam. Online doubt support um sema helpful. Eppo doubt ketalum, immediate-ah reply
-         kuduthanga. Andha support nala learning experience innum smooth-ah irundhudhu. Class la kudutha examples,
-          explanations ellame real-time ku romba useful-ah irundhudhu.
-        MERN stack-la work panna romba confidence kidaichudhu. Naan inga join pannadhu romba correct decision nu feel pannuren.
-         Future-la innum advanced classes kuduthalum definitely join panren. Overall-ah, indha MERN Stack online class en life-la
-          oru valuable learning experience. Trainer-kum online team-kum romba thanks for all the support and guidance.
+          The class you conducted was very useful. We learned a lot from it, and the guidance you gave greatly increased my confidence. 
+          Thank you so much for that. It was extremely beneficial and very helpful for our lives. Thank you from the bottom of my heart for creating and giving us this opportunity..!!
         `,
         "rating": 5
       },
       {
-        "name": "Jansivijila",
-        "course": "MERN Stack Development",
+        "name": "Dhivya",
+        "course": "UI UX Design",
         "role": "student",
         "institution": "NSN collage of Engineering & Technology",
         "feedback": `
-        The MERN Stack was very helpful for my career because it improved my skills and knowledge for
-         creating new websites or software-based applications. Your teaching method was very good and cleared my doubts easily.
-          Learning this course was very useful for my career. Now, I'm creating my own website, and it helped me clear my interview.
-        Thank you for this wonderful opportunity to learn the MERN stack course.Overall the course duration was very
-         effective and efficiency for my career.
+        Cls fullah understand👍 achu bro 200 worth tha pa website na ena 
+        fullah understand achu figma na still oru idea iruku pa it's help full to carrier pa thanks a lot 
         `,
         "rating": 5
       },

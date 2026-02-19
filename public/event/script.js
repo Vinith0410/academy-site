@@ -1,4 +1,44 @@
 const courseData = [
+  {
+    tag:"TRENDING",
+    title:"Data Analytics",
+    internship:"60-days Classes",
+    liveTraining:"70+ hours hours of live training",
+    description:"Hands-on data analysis with real-world datasets",
+    price:"₹3,750",
+    oldPrice:"₹10,000",
+    bullets:["Excel Power BI & Jupter","Python for data analysis & science"],
+    info:"Includes project reviews, certificate, interview guidance and resume building.",
+    buttonText:"Apply",
+    status:"open",
+    registrationEnd:"2026-03-01",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Data Analysis" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
+  {
+    tag:"TRENDING",
+    title:"MERN Stack Development",
+    internship:"90-days Classes",
+    liveTraining:"100+ hours hours of live training",
+    description:"Daily practical builds & deployments",
+    price:"₹5,000",
+    oldPrice:"₹12,999",
+    bullets:["Frontend & Backend","Database & Deployment"],
+    info:"Includes project reviews, certificate, interview guidance and resume building.",
+    buttonText:"Apply",
+    status:"open",
+    registrationEnd:"2026-03-01",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
    {
     tag:"TRENDING",
     title:"MERN Stack Development",

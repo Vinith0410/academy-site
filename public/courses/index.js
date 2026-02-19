@@ -166,7 +166,7 @@ list.forEach(c => {
 
   card.innerHTML = `
     <div class="course-image">
-      <img src="${c.img}" alt="${c.name}">
+      <img src="${c.img}" alt="${c.name}" loading="lazy" decoding="async">
       <div class="course-discount">${Math.round(((c.oldPrice - c.price) / c.oldPrice) * 100)}% OFF</div>
       <div class="overlay">
         <h3>${c.name}</h3>
@@ -292,4 +292,3 @@ async function handleCourseSubmit(e){
 }
 
 // Form is handled via onsubmit attribute in HTML: onsubmit="handleCourseSubmit(event)"
-

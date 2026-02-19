@@ -1,4 +1,18 @@
  const feedbackData = [
+        {
+        "name": "Surya",
+        "course": "MERN Stack Development",
+        "role": "Employee",
+        "company": "Caseyug Groups",
+        "feedback": `
+          Vinith is a highly skilled and supportive technical trainer.
+          He guided me effectively while working on a real-world project.
+          His practical approach and real-time problem solving improved my understanding.
+          He was always available to support and clarify doubts during development.
+          Overall, his mentorship played a key role in my technical growth.
+        `,
+        "rating": 5
+      },
       {
         "name": "Kowsika",
         "course": "MERN-Stack Development",
@@ -15,20 +29,6 @@
         MERN stack-la work panna romba confidence kidaichudhu. Naan inga join pannadhu romba correct decision nu feel pannuren.
          Future-la innum advanced classes kuduthalum definitely join panren. Overall-ah, indha MERN Stack online class en life-la
           oru valuable learning experience. Trainer-kum online team-kum romba thanks for all the support and guidance.
-        `,
-        "rating": 5
-      },
-      {
-        "name": "Jansivijila",
-        "course": "MERN Stack Development",
-        "role": "student",
-        "institution": "NSN collage of Engineering & Technology",
-        "feedback": `
-        The MERN Stack was very helpful for my career because it improved my skills and knowledge for
-         creating new websites or software-based applications. Your teaching method was very good and cleared my doubts easily.
-          Learning this course was very useful for my career. Now, I'm creating my own website, and it helped me clear my interview.
-        Thank you for this wonderful opportunity to learn the MERN stack course.Overall the course duration was very
-         effective and efficiency for my career.
         `,
         "rating": 5
       },

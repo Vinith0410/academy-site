@@ -1,4 +1,44 @@
 const courseData = [
+    {
+    tag:"MOST POPULAR",
+    title:"Frontend Development",
+    internship:"10-day Bootcamp",
+    liveTraining:"10+ hours of live training",
+    description:"Daily practical builds & deployments",
+    price:"₹399",
+    oldPrice:"₹2500",
+    bullets:["HTML CSS","JavaScript"],
+    info:"Includes certificate & project support.",
+    buttonText:"Apply Now",
+    status:"close",
+    registrationEnd:"2025-12-05",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Offline", line2:"(NSN Collage Karur)" },
+      { icon:"fa-user", line1:"Academy", line2:"Development Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
+  {
+    tag:"TRENDING & POPULAR",
+    title:"Power BI  Analytics",
+    internship:"5-day Bootcamp",
+    liveTraining:"5+ hours of live training",
+    description:"Data analysis, visualization & reports",
+    price:"₹99",
+    oldPrice:"₹1000",
+    bullets:["Power BI Desktop","Data Visualization"],
+    info:"Includes certificate & project support.",
+    buttonText:"Apply Now",
+    status:"close",
+    registrationEnd:"2025-12-07",
+    infoDetails:[
+      { icon:"fa-location-dot", line1:"Online", line2:"(Google Meet)" },
+      { icon:"fa-user", line1:"Academy", line2:"Analytics Team" },
+      { icon:"fa-microphone", line1:"Host", line2:"Bright Future Academy" },
+      { icon:"fa-book", line1:"Interactive", line2:"Live Session" }
+    ]
+  },
   {
     tag:"TRENDING",
     title:"UI & UX Design Using Figma",
